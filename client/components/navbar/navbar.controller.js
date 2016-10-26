@@ -10,10 +10,16 @@ class NavbarController {
   isCollapsed = true;
   //end-non-standard
 
-  constructor(Auth) {
+  constructor(Auth, $mdSidenav) {
+    this.$mdSidenav = $mdSidenav;
     this.isLoggedIn = Auth.isLoggedIn;
     this.isAdmin = Auth.isAdmin;
     this.getCurrentUser = Auth.getCurrentUser;
+
+  }
+
+  openLeftSidenav(){
+    this.$mdSidenav('left').toggle();
   }
 
 }
