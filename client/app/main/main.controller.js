@@ -4,7 +4,8 @@
 
   class MainController {
 
-    constructor($http) {
+    constructor($http, $mdSidenav) {
+      this.$mdSidenav = $mdSidenav;
       this.$http = $http;
       this.awesomeThings = [];
     }
@@ -28,11 +29,22 @@
     deleteThing(thing) {
       this.$http.delete('/api/things/' + thing._id);
     }
+
+    closeSidenav(){
+      this.$mdSidenav('left').close();
+    }
+
+    // openLeftSidenav(){
+    //   this.$mdSidenav('left').toggle();
+    // }
+
+
   }
 
   angular.module('maerkApp')
     .component('main', {
       templateUrl: 'app/main/main.html',
-      controller: MainController
-    });
+      controller: MainController,
+      controllerAs: 'vm'
+      });
 })();
