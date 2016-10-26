@@ -38,26 +38,25 @@
    <div><img src="../assets/images/ksquare-logo-black-red.png" height="42" width="150" hspace="10"></div>
 
     <span flex></span>
-    <!-- <md-content class="md-padding"> -->
-      <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
-        <!-- <mg-nav-item ng-show="nav.isLoggedIn()" md-nav-sref-active="active" md-nav-sref="signup">Sign up</md-nav-item> -->
-        <!-- <mg-nav-item ng-show="nav.isLoggedIn()" md-nav-sref-active="active" md-nav-sref="login">login</md-nav-item> -->
-        <!-- <mg-nav-item ng-show="nav.isLoggedIn()"><p class="navbar-text">Hello {{ nav.getCurrentUser().name }}</p></md-nav-item> -->
-        <!-- <mg-nav-item ng-hide="nav.isLoggedIn()" md-nav-sref-active="active" md-nav-sref="settings">Settings</md-nav-item> -->
-        <!-- <mg-nav-item ng-show="nav.isLoggedIn()" md-nav-sref-active="active" md-nav-sref="signup">Sign up</md-nav-item> -->
-        <md-nav-item ng-hide="nav.isLoggedIn()" md-nav-sref-active="active" md-nav-sref="settings"><i class="material-icons">&#xE8B8;</i></md-nav-item>
+
+  <!-- </ul>  -->
+  <div class="nav navbar-nav navbar-right" layout='row'>
+    <!-- <div ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="signup">Sign up</a></div>
+    <div ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="login">Login</a></div> -->
+    <div ng-show="nav.isLoggedIn()"><p class="navbar-text">Hello {{ nav.getCurrentUser().name }}</p> </div>
+    <div ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="settings"><span class="glyphicon glyphicon-cog"></span><i class="material-icons">&#xE8B8;</i></a></div>
+    <!-- <li ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="settings"><span class="glyphicon glyphicon-cog"></span>Settings</a></li> -->
+    <div ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="logout"><i class="material-icons">power_settings_new</i></a></div>
+    <!-- <li ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="logout">Logout</a></li> -->
+  </div>
+
+      <!-- <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links" class="nav navbar-nav navbar-right"> -->
+        <!-- <mg-nav-item ng-hide="nav.isLoggedIn()" md-nav-sref-active="active" md-nav-sref="signup">Sign up</md-nav-item>
+        <mg-nav-item ng-hide="nav.isLoggedIn()" md-nav-sref-active="active" md-nav-sref="login">login</md-nav-item>
+        <mg-nav-item ng-show="nav.isLoggedIn()"><p class="navbar-text">Hello {{ nav.getCurrentUser().name }}</p></md-nav-item> -->
+        <!-- <md-nav-item ng-hide="nav.isLoggedIn()" md-nav-sref-active="active" md-nav-sref="settings"><i class="material-icons">&#xE8B8;</i></md-nav-item>
         <md-nav-item ng-hide="nav.isLoggedIn()" md-nav-sref-active="active" md-nav-sref="logout"><i class="material-icons">power_settings_new</i></md-nav-item>
-        <!-- <md-nav-item md-nav-click="goto('page2')" name="page2">Page Two</md-nav-item>
-        <md-nav-item md-nav-click="goto('page3')" name="page3">Page Three</md-nav-item>
-        <md-nav-item md-nav-sref="app.page4" name="page4">Page Four</md-nav-item>
-        <md-nav-item md-nav-href="#page5" name="page5">Page Five</md-nav-item> -->
-      </md-nav-bar>
-      <!-- <div class="ext-content">
-        External content for `<span>{{currentNavItem}}</span>`
-      </div> -->
-    <!-- </md-content> -->
+      </md-nav-bar> -->
+
   </div>
 </md-toolbar>
-
-
-<!-- md-is-locked-open="$mdMedia('gt-md')" -->
