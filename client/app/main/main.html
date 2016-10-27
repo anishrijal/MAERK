@@ -1,38 +1,103 @@
  <div class="main-view-container" flex layout='row' layout-fill >
-   <md-sidenav class="md-sidenav-left md-whiteframe-z2"
-           md-component-id="left"  md-is-locked-open="$mdMedia('gt-md')"
-            md-whiteframe="4">
-       <md-toolbar layout="row">
-        <div class="md-toolbar-tools">
-           <h2 text-align="center">Side Nav</h2>
-           <span flex></span>
-           <md-button class="md-icon-button" aria-label="Close Side Panel" ng-click="vm.closeSidenav()" hide-gt-md>
-             <md-icon class="md-default-theme" class="material-icons">&#xE5CD;</md-icon>
+       <md-sidenav class="md-sidenav-left md-whiteframe-z2"
+               md-component-id="left"  md-is-locked-open="$mdMedia('gt-md')"
+                md-whiteframe="4" layout='column'>
+           <md-toolbar layout="row">
+            <div class="md-toolbar-tools">
+               <h2 text-align="center">Side Nav</h2>
+               <span flex></span>
+               <md-button class="md-icon-button" aria-label="Close Side Panel" ng-click="vm.closeSidenav()" hide-gt-md>
+                 <md-icon class="md-default-theme" class="material-icons">&#xE5CD;</md-icon>
+               </md-button>
+              </div>
+           </md-toolbar>
+
+           <md-list-item>
+             <p>Reports</p>
+                 <md-menu class="md-secondary">
+                       <md-button class="md-icon-button">
+                            <md-icon md-svg-icon="communication:message"></md-icon>
+                       </md-button>
+                       <md-menu-content width="4">
+                             <md-menu-item>
+                                   <md-button>
+                                     Skills
+                                   </md-button>
+                             </md-menu-item>
+                             <md-menu-item>
+                                   <md-button>
+                                     Client
+                                   </md-button>
+                             </md-menu-item>
+                             <md-menu-item>
+                                   <md-button>
+                                     Recruiter
+                                   </md-button>
+                             </md-menu-item>
+                       </md-menu-content>
+                 </md-menu>
+           </md-list-item>
+
+           <md-button md-no-ink class="md-primary">Employee</md-button>
+           <md-button md-no-ink class="md-primary">Recruiter</md-button>
+           <md-button md-no-ink class="md-primary">Quarterly</md-button>
+           <md-button class="md-primary dropdown" ng-click="myDropdownIsActive=!myDropdownIsActive" ng-class="{active:myDropdownIsActive}">
+             Report
+             <ul class="dropdown-menu md-whiteframe-z1">
+               <li><md-button ng-click="action1()">Client</md-button></li>
+               <li><md-button>Something else</md-button></li>
+             </ul>
            </md-button>
-          </div>
-       </md-toolbar>
-         <md-button md-no-ink class="md-primary">Employee</md-button>
-         <md-button md-no-ink class="md-primary">Reports</md-button>
-         <md-button md-no-ink class="md-primary">Recruiter</md-button>
-         <md-button md-no-ink class="md-primary">Quarterly</md-button>
 
-   </md-sidenav>
+       </md-sidenav>
 
-
-  <!-- <md-sidenav
-
-       class="md-sidenav-left"
-       md-component-id="left"
-       md-is-locked-open="$mdMedia('gt-md')"
-       md-whiteframe="4">
-
-     <md-button md-no-ink class="md-primary">Employee</md-button>
-     <md-button md-no-ink class="md-primary">Reports</md-button>
-     <md-button md-no-ink class="md-primary">Recruiter</md-button>
-     <md-button md-no-ink class="md-primary">Quarterly</md-button>
-   </md-sidenav> -->
-  <div ui-view="">
-
-  <!-- </div>
+       <div ui-view="">
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- </div>
+
+
+<md-toolbar class="md-theme-indigo" layout layout-align = "center center">
+      <h1>Side Nav Left</h1>
+  </md-toolbar>
+
+    <md-list-item>
+      <p>Reports</p>
+
+      <md-menu class="md-secondary">
+        <md-button class="md-icon-button">
+          <md-icon md-svg-icon="communication:message"></md-icon>
+        </md-button>
+        <md-menu-content width="4">
+          <md-menu-item>
+            <md-button>
+              Skills
+            </md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button>
+              Client
+            </md-button>
+          </md-menu-item>
+          <md-menu-divider></md-menu-divider>
+          <md-menu-item>
+            <md-button>
+              Recruiter
+            </md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+
+    </md-list-item>
