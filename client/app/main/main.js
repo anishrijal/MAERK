@@ -5,6 +5,7 @@ angular.module('maerkApp')
 
     $stateProvider.state('main', {
       url: '/',
-      template: '<main class="flex layout-column"></main>'
+      template: '<main class="flex layout-column"></main>',
+      authenticate: 'true'
     })
   });
