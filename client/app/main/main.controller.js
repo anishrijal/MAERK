@@ -5,6 +5,7 @@
   class MainController {
 
     constructor($http, $mdSidenav) {
+
       this.$mdSidenav = $mdSidenav;
       this.$http = $http;
       this.awesomeThings = [];
@@ -34,10 +35,9 @@
       this.$mdSidenav('left').close();
     }
 
-    // openLeftSidenav(){
-    //   this.$mdSidenav('left').toggle();
-    // }
-
+    openMenu($mdOpenMenu, ev){
+      $mdOpenMenu(ev);
+    }
 
   }
 
@@ -48,3 +48,9 @@
       controllerAs: 'vm'
       });
 })();
+
+
+// this.openMenu = function($mdOpenMenu, ev) {
+//      originatorEv = ev;
+//      $mdOpenMenu(ev);
+//    };

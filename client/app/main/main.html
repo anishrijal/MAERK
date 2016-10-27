@@ -1,38 +1,36 @@
  <div class="main-view-container" flex layout='row' layout-fill >
-   <md-sidenav class="md-sidenav-left md-whiteframe-z2"
-           md-component-id="left"  md-is-locked-open="$mdMedia('gt-md')"
-            md-whiteframe="4">
-       <md-toolbar layout="row">
-        <div class="md-toolbar-tools">
-           <h2 text-align="center">Side Nav</h2>
-           <span flex></span>
-           <md-button class="md-icon-button" aria-label="Close Side Panel" ng-click="vm.closeSidenav()" hide-gt-md>
-             <md-icon class="md-default-theme" class="material-icons">&#xE5CD;</md-icon>
-           </md-button>
+       <md-sidenav class="md-sidenav-left md-whiteframe-z2"
+               md-component-id="left"  md-is-locked-open="$mdMedia('gt-md')"
+                md-whiteframe="4" layout='column'>
+           <md-toolbar layout="row">
+            <div class="md-toolbar-tools">
+               <h2 text-align="center">Side Nav</h2>
+               <span flex></span>
+               <md-button class="md-icon-button" aria-label="Close Side Panel" ng-click="vm.closeSidenav()" hide-gt-md>
+                 <md-icon class="md-default-theme" class="material-icons">&#xE5CD;</md-icon>
+               </md-button>
+              </div>
+           </md-toolbar>
+           <div align='center'>
+            <md-menu>
+              <md-button md-no-ink class="md-primary" ng-click="vm.openMenu($mdOpenMenu, $event)">
+                Report</md-button>
+              <md-menu-content width="4">
+                <!-- <a>REPORT</a> -->
+                <md-menu-item><md-button md-no-ink class="md-primary">Skill</md-button></md-menu-item>
+                <md-menu-item><md-button md-no-ink class="md-primary">Clients</md-button></md-menu-item>
+                <md-menu-item><md-button md-no-ink class="md-primary">Recruiter</md-button></md-menu-item>
+              </md-menu-content>
+            </md-menu>
           </div>
-       </md-toolbar>
-         <md-button md-no-ink class="md-primary">Employee</md-button>
-         <md-button md-no-ink class="md-primary">Reports</md-button>
-         <md-button md-no-ink class="md-primary">Recruiter</md-button>
-         <md-button md-no-ink class="md-primary">Quarterly</md-button>
-
-   </md-sidenav>
+           <md-button md-no-ink class="md-primary">Employee</md-button>
+           <md-button md-no-ink class="md-primary">Recruiter</md-button>
+           <md-button md-no-ink class="md-primary">Quarterly</md-button>
+           <md-button class="md-primary dropdown" ng-click="myDropdownIsActive=!myDropdownIsActive" ng-class="{active:myDropdownIsActive}">
 
 
-  <!-- <md-sidenav
+       </md-sidenav>
 
-       class="md-sidenav-left"
-       md-component-id="left"
-       md-is-locked-open="$mdMedia('gt-md')"
-       md-whiteframe="4">
-
-     <md-button md-no-ink class="md-primary">Employee</md-button>
-     <md-button md-no-ink class="md-primary">Reports</md-button>
-     <md-button md-no-ink class="md-primary">Recruiter</md-button>
-     <md-button md-no-ink class="md-primary">Quarterly</md-button>
-   </md-sidenav> -->
-  <div ui-view="">
-
-  <!-- </div>
+       <div ui-view="">
 
 </div>
