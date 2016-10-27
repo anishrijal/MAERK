@@ -1,4 +1,4 @@
- <div class="main-view-container" flex layout='row' layout-fill >
+ <div class="main-view-container" flex layout='row' layout-fill>
        <md-sidenav class="md-sidenav-left md-whiteframe-z2"
                md-component-id="left"  md-is-locked-open="$mdMedia('gt-md')"
                 md-whiteframe="4" layout='column'>
@@ -11,6 +11,7 @@
                </md-button>
               </div>
            </md-toolbar>
+
            <div align='center'>
             <md-menu>
               <md-button md-no-ink class="md-primary" ng-click="vm.openMenu($mdOpenMenu, $event)">
@@ -30,5 +31,6 @@
        </md-sidenav>
 
        <div ui-view="">
+
 
 </div>
