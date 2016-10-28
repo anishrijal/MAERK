@@ -56,7 +56,7 @@ export function index(req, res) {
     .catch(handleError(res));
 }
 
-// Gets a single Thing from the DB
+// Gets a single Employee from the DB
 export function show(req, res) {
   return Employee.findById(req.params.id).exec()
     .then(handleEntityNotFound(res))
