@@ -10,11 +10,10 @@ angular.module('maerkApp')
       })
       .state('logout', {
         url: '/logout?referrer',
-        referrer: 'main',
+        referrer: 'login',
         template: '',
         controller: function($state, Auth) {
-          console.log("hfoaf");
-          var referrer = $state.params.referrer || $state.current.referrer || 'main';
+          var referrer = 'login'
           Auth.logout();
           $state.go(referrer);
         }
