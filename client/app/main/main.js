@@ -9,7 +9,7 @@ angular.module('maerkApp')
       authenticate: 'true'
     })
     .state('main.employee',{
-      url: '/',
+      url: '/employee',
       templateUrl: 'app/employee/employee.html',
       controller: 'EmployeeController',
       controllerAs: 'vm'
