@@ -13,7 +13,7 @@ angular.module('maerkApp')
         referrer: 'login',
         template: '',
         controller: function($state, Auth) {
-          var referrer = 'login'
+          var referrer = 'login';
           Auth.logout();
           $state.go(referrer);
         }
