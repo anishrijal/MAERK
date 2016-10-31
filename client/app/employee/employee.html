@@ -1,0 +1,22 @@
+<div layout-margin>
+    <mdt-table  paginated-rows="{isEnabled: true, rowsPerPageValues: [5,10,20]}"
+                mdt-row="{
+                        data: employeeList,
+                        'column-keys': [
+                            'name',
+                            'client',
+                            'skill',
+                            'recruiter',
+                            'revenue'
+                        ]
+                      }">
+      <mdt-header-row>
+        <mdt-column align-rule="left">Name</mdt-column>
+        <mdt-column align-rule="right">Client</mdt-column>
+        <mdt-column align-rule="right">Skill</mdt-column>
+        <mdt-column align-rule="right">Recruiter</mdt-column>
+        <mdt-column align-rule="right">Revenue</mdt-column>
+      </mdt-header-row>
+
+    </mdt-table>
+</div>

@@ -16,20 +16,20 @@
               <md-button md-no-ink class="md-primary" ng-click="vm.openMenu($mdOpenMenu, $event)" layout-fill>
                 Report</md-button>
               <md-menu-content width="4">
-                <md-menu-item><md-button md-no-ink class="md-primary" ui-sref="">Skill</md-button></md-menu-item>
-                <md-menu-item><md-button md-no-ink class="md-primary" ui-sref="">Clients</md-button></md-menu-item>
-                <md-menu-item><md-button md-no-ink class="md-primary" ui-sref="">Recruiter</md-button></md-menu-item>
+                <md-menu-item><md-button md-no-ink class="md-primary" ui-sref="main">Skill</md-button></md-menu-item>
+                <md-menu-item><md-button md-no-ink class="md-primary" ui-sref="main">Clients</md-button></md-menu-item>
+                <md-menu-item><md-button md-no-ink class="md-primary" ui-sref="main">Recruiter</md-button></md-menu-item>
               </md-menu-content>
             </md-menu>
 
-           <md-button md-no-ink class="md-primary">Employee</md-button>
+           <md-button md-no-ink class="md-primary" ui-sref=".employee">Employee</md-button>
            <md-button md-no-ink class="md-primary">Recruiter</md-button>
            <md-button md-no-ink class="md-primary">Quarterly</md-button>
 
 
        </md-sidenav>
 
-       <div ui-view="">
+       <ui-view flex layout="column"></ui-view>
 
 
 </div>
