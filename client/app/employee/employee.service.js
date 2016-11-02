@@ -16,8 +16,12 @@
           id: '@_id'
         }
       }
-    });
-  }
+
+      });
+    }
+
+
+
 
   angular.module('maerkApp')
     .factory('Employee', EmployeeResource);

@@ -1,15 +1,28 @@
 <div layout-margin>
+
+      <md-input-container style='margin: 15px;'>
+        <label>Search</label>
+        <input type="text" ng-model="filterName">
+      </md-input-container>
+
+      <div ng-hide="true">
+              {{(employeeFiltered = (vm.employeeList | filter: filterName))}}
+      </div>
+
+
+
     <mdt-table  selectable-rows="true",
                 paginated-rows="{isEnabled: true, rowsPerPageValues: [5,10,20]}"
                 mdt-row="{
-                        data: vm.employeeList,
+                        data: employeeFiltered,
+                        'table-row-id-key': 'id',
                         'column-keys': [
                             'first_name',
                             'last_name',
                             'client',
                             'skill',
                             'recruiter',
-                            'revenue'
+                            'salary'
                         ]
                       }">
       <mdt-header-row>
@@ -18,7 +31,7 @@
         <mdt-column align-rule="right">Client</mdt-column>
         <mdt-column align-rule="right">Skill</mdt-column>
         <mdt-column align-rule="right">Recruiter</mdt-column>
-        <mdt-column align-rule="right">Revenue</mdt-column>
+        <mdt-column align-rule="right">Salary</mdt-column>
 
       </mdt-header-row>
       <mdt-custom-cell column-key="skill" >
