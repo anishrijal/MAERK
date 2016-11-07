@@ -1,6 +1,5 @@
 <div layout-margin>
 
-
       <md-input-container style='margin: 15px;'>
         <label>Search</label>
         <input type="text" ng-model="filterName">
@@ -14,13 +13,18 @@
 
         <div class="md-toolbar-tools">
            <h2 text-align="center">Employee</h2>
+           <md-button ng-click="vm.add($event)">
+             <md-icon class="md-default-theme" class="material-icons">&#xE145;</md-icon>
+           </md-button>
+
+
            <span flex></span>
 
           <select ng-show="vm.showOption">
             <option value="activate">Activate</option>
             <option value="deactivate">Deactivate</option>
           </select>
-           <md-button class="md-icon-button" ng-click="vm.edit(row)" ng-show='vm.showEdit'>
+           <md-button class="md-icon-button" ng-click="vm.edit($eve)" ng-show='vm.showEdit'>
              <md-icon class="md-default-theme" class="material-icons">&#xE254;</md-icon>
            </md-button>
            <md-button class="md-icon-button" ng-click="vm.delete(rows)" ng-show='vm.showDelete'>
@@ -60,7 +64,6 @@
       <mdt-custom-cell column-key="client" >
               <span ng-class="{}">{{value}}</span>
       </mdt-custom-cell>
-
 
     </mdt-table>
 </div>
