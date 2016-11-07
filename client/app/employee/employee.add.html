@@ -1,110 +1,116 @@
-<md-content layout-padding>
-    <div layout="column">
-      <md-content layout="row">
-        <md-content layout="column">
+<md-dialog flex="50">
 
-            <md-input-container>
-                  <label>First Name</label>
-                  <input ng-model="vm.first_name">
+  <md-toolbar>
+      <div class="md-toolbar-tools">
+         <h2 text-align="center">Add Employee</h2>
+       </div>
+  </md-toolbar>
+
+  <md-content layout-padding>
+
+        <md-content  layout="row" layout-xs="column">
+            <md-input-container flex>
+              <label>First Name</label>
+              <input ng-model="vm.newEmp.first_name">
             </md-input-container>
-
-            <md-input-container>
-                  <label>Client</label>
-                  <input ng-model="vm.client">
+            <md-input-container flex>
+              <label>Last Name</label>
+              <input ng-model="vm.newEmp.last_name">
             </md-input-container>
-
-            <md-input-container>
-                  <label>Recruiter</label>
-                  <input ng-model="vm.recruiter">
-            </md-input-container>
-
-            <md-input-container>
-                  <label>Salary</label>
-                  <input ng-model="vm.salary">
-            </md-input-container>
-
-            <md-input-container>
-                  <label>Relocation</label>
-                  <input ng-model="vm.relocation">
-            </md-input-container>
-
-            <md-input-container>
-                  <label>Pay Vacation Cost</label>
-                  <input ng-model="vm.pay_vacation_cost">
-            </md-input-container>
-
-            <md-input-container>
-                  <label>Target Bill rate</label>
-                  <input ng-model="vm.target_bill_rate">
-            </md-input-container>
-
-
         </md-content>
 
+        <md-content layout="row" layout-xs="column">
+            <md-input-container flex>
+                <label>Client</label>
+                <md-chips ng-model="vm.newEmp.client" md-removable="vm.removable"></md-chips>
+              </md-input-container>
 
-        <md-content layout="column">
+            <md-input-container flex>
+              <label>Skills</label>
+              <md-chips ng-model="vm.newEmp.skill" md-removable="vm.removable"></md-chips>
+              </md-input-container>
+        </md-content>
 
-            <md-input-container>
-              <label>Last Name</label>
-              <input ng-model="vm.last_name">
+        <md-content layout="row" layout-xs="column">
+            <md-input-container flex>
+                  <label>Recruiter</label>
+                  <input ng-model="vm.newEmp.recruiter">
             </md-input-container>
-
-            <md-input-container>
-              <label>Skill</label>
-              <input ng-model="vm.skill">
-            </md-input-container>
-
-            <md-input-container>
+            <md-input-container flex>
               <label>Placement type</label>
-              <md-select ng-model="vm.placement_type">
-                <md-option>Full Time</md-option>
-                <md-option>Project</md-option>
-                <md-option>Part Time</md-option>
+              <md-select ng-model="vm.newEmp.placement_type">
+                  <md-option ng-repeat="workType in vm.placeType" value="{{workType.types}}">
+                    {{workType.types}}
+                  </md-option>
               </md-select>
             </md-input-container>
-            <br />
-            <md-input-container>
-              <label>Insurance</label>
-              <input ng-model="vm.insurance">
-            </md-input-container>
-
-            <md-input-container>
-              <label>immigration</label>
-              <input ng-model="vm.immigration">
-            </md-input-container>
-
-            <md-input-container>
-              <label>Ksquare Hourly Cost</label>
-              <input ng-model="vm.Ksquare_hourly_cost">
-            </md-input-container>
-
-            <md-input-container>
-                  <label>Client Bill Pay</label>
-                  <input ng-model="vm.client_bill_pay">
-            </md-input-container>
-
         </md-content>
 
-      </md-content>
-
-      <div ng-show='vm.addEmp'>
-          <md-button class="md-primary md-raised" ng-click="vm.addEmployee(employee)" >
-            ADD EMPLOYEE
-          </md-button>
-          <md-button class="md-primary md-raised" ng-click="vm.cancel()" >
-            Cancel
-          </md-button>
-      </div>
-      <div ng-show='vm.editEmp'>
-          <md-button class="md-primary md-raised" ng-click="vm.editEmployee(employee)">
-            EDIT EMPLOYEE
-          </md-button>
-          <md-button class="md-primary md-raised" ng-click="vm.cancel()" >
-            Cancel
-          </md-button>
-      </div>
+        <md-content layout="row" layout-xs="column">
+            <md-input-container flex>
+                  <label>Salary</label>
+                  <input ng-model="vm.newEmp.salary">
+            </md-input-container>
+            <md-input-container flex>
+              <label>Insurance</label>
+              <input ng-model="vm.newEmp.insurance">
+            </md-input-container>
+        </md-content>
 
 
+        <md-content layout="row" layout-xs="column">
+            <md-input-container flex>
+                  <label>Relocation</label>
+                  <input ng-model="vm.newEmp.relocation">
+            </md-input-container>
+            <md-input-container flex>
+              <label>immigration</label>
+              <input ng-model="vm.newEmp.immigration">
+            </md-input-container>
+        </md-content>
 
-    </div>
+        <md-content layout="row" layout-xs="column">
+            <md-input-container flex>
+                  <label>Pay Vacation Cost</label>
+                  <input ng-model="vm.newEmp.pay_vacation_cost">
+            </md-input-container>
+            <md-input-container flex>
+              <label>Ksquare Hourly Cost</label>
+              <input ng-model="vm.newEmp.Ksquare_hourly_cost">
+            </md-input-container>
+        </md-content>
+
+        <md-content layout="row" layout-xs="column">
+            <md-input-container flex>
+                  <label>Target Bill rate</label>
+                  <input ng-model="vm.newEmp.target_bill_rate">
+            </md-input-container>
+            <md-input-container flex>
+                  <label>Client Bill Pay</label>
+                  <input ng-model="vm.newEmp.client_bill_pay">
+            </md-input-container>
+        </md-content>
+
+        <md-content ng-show='vm.addEmp'>
+            <md-button class="md-primary md-raised" ng-click="vm.addEmployee(vm.newEmp)" >
+              ADD EMPLOYEE
+            </md-button>
+
+            <md-button class="md-primary md-raised" ng-click="vm.cancel()">
+              Cancel
+            </md-button>
+        </md-content>
+
+        <md-content ng-show='vm.editEmp'>
+            <md-button class="md-primary md-raised" ng-click="vm.editEmployee(vm.newEmp)">
+              EDIT EMPLOYEE
+            </md-button>
+
+            <md-button class="md-primary md-raised" ng-click="vm.cancel()" >
+              Cancel
+            </md-button>
+        </md-content>
+
   </md-content>
+
+</md-dialog>
