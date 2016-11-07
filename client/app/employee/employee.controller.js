@@ -30,22 +30,22 @@
 
               };
 
-              this.edit = function(ev){
-                // this.editEmp = true;
-                // this.addEmp= false;
-
-                $mdDialog.show({
-
-                  controller: editController,
-                  controllerAs: 'vm',
-                  templateUrl: '/app/employee/employee.add.html',
-                  parent: angular.element(document.body),
-                  clickOutsideToClose:true,
-                  targetEvent: ev,
-                  fullscreen: this.customFullscreen
-                });
-
-              };
+              // this.edit = function(ev){
+              //   // this.editEmp = true;
+              //   // this.addEmp= false;
+              //
+              //   $mdDialog.show({
+              //
+              //     controller: editController,
+              //     controllerAs: 'vm',
+              //     templateUrl: '/app/employee/employee.add.html',
+              //     parent: angular.element(document.body),
+              //     clickOutsideToClose:true,
+              //     targetEvent: ev,
+              //     fullscreen: this.customFullscreen
+              //   });
+              //
+              // };
 
               this.delete = function(rows){
 
@@ -63,7 +63,7 @@
                   parent: angular.element(document.body),
                   clickOutsideToClose:true,
                   targetEvent: ev,
-                  fullscreen: this.customFullscreen
+                  // fullscreen: this.customFullscreen
 
                 });
 
@@ -72,6 +72,16 @@
               function addController(){
                 this.editEmp = false;
                 this.addEmp= true;
+
+                this.newEmp ={};
+                this.newEmp.client=[];
+                this.newEmp.skill =[];
+                this.placeType = ('fulltime project part-time').split(' ').map(function(workType) {
+                  return {
+                    types: workType
+                  };
+                })
+
                 this.addEmployee = Employee.create;
 
                 this.cancel = function() {
@@ -79,17 +89,17 @@
               };
 
             }
-              function editController(){
-
-                this.editEmp = true;
-                this.addEmp= false;
-                this.editEmployee = Employee.update;
-
-                this.cancel = function() {
-                      $mdDialog.cancel();
-              };
-
-            }
+            //   function editController(){
+            //
+            //     this.editEmp = true;
+            //     this.addEmp= false;
+            //     this.editEmployee = Employee.update;
+            //
+            //     this.cancel = function() {
+            //           $mdDialog.cancel();
+            //   };
+            //
+            // }
 
         });
 
