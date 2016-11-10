@@ -19,12 +19,9 @@
                       this.showDelete = false;
                     }
                     else if(selected.length == 1){
-                      // this.showOption = true;
-                      this.showOption = ('Activate Deactive').split(' ').map(function(workType) {
-                        return {
-                          types: workType
-                        };
-                      })
+                      this.showOption =true;
+                      this.showOptions = ["Activate" , "Deactivate"];
+                      this.activate =this.showOptions[0];
                       this.showDelete = true;
                       this.showEdit =true;
                     }
