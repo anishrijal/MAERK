@@ -19,7 +19,12 @@
                       this.showDelete = false;
                     }
                     else if(selected.length == 1){
-                      this.showOption = true;
+                      // this.showOption = true;
+                      this.showOption = ('Activate Deactive').split(' ').map(function(workType) {
+                        return {
+                          types: workType
+                        };
+                      })
                       this.showDelete = true;
                       this.showEdit =true;
                     }
@@ -31,6 +36,7 @@
 
 
               };
+
 
 
               this.edit = function(){

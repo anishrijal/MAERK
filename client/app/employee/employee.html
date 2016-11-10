@@ -18,9 +18,15 @@
            </md-button>
 
            <span flex></span>
-           <md-select ng-show="vm.showOption" ng-model="vm.selectedUser">
-               <md-option ng-value="activate">activate</md-option>
-               <md-option ng-value="deactivate">Deactivate</md-option>
+           <!-- <md-select ng-show="vm.showOption" ng-model="vm.selectedUser">
+             <md-option ng-value= "activate">Activate</md-option>
+             <md-option ng-value= "deactivate">Deactivate</md-option>
+            </md-select> -->
+
+            <md-select ng-model="vm.showOptions" ng-show="vm.showOption">
+                <md-option ng-repeat="workType in vm.showOption" value="{{workType.types}}">
+                  {{workType.types}}
+                </md-option>
             </md-select>
 
            <md-button class="md-icon-button" ng-click="vm.edit($eve)" ng-show='vm.showEdit'>
