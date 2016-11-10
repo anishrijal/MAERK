@@ -2,7 +2,9 @@
 
   <md-toolbar>
       <div class="md-toolbar-tools">
-         <h2 text-align="center">Add Employee</h2>
+         <h2 text-align="center" ng-show="vm.addEmp">Add Employee</h2>
+         <h2 text-align="center" ng-show="vm.editEmp">Edit Employee</h2>
+
        </div>
   </md-toolbar>
 
@@ -80,6 +82,7 @@
             </md-input-container>
         </md-content>
 
+
         <md-content layout="row" layout-xs="column">
             <md-input-container flex>
                   <label>Target Bill rate</label>
@@ -90,7 +93,7 @@
                   <input ng-model="vm.newEmp.client_bill_pay">
             </md-input-container>
         </md-content>
-
+        <div id ="toastBounds"></div>
         <md-content ng-show='vm.addEmp'>
             <md-button class="md-primary md-raised" ng-click="vm.addEmployee(vm.newEmp)" >
               ADD EMPLOYEE
@@ -102,8 +105,9 @@
         </md-content>
 
         <md-content ng-show='vm.editEmp'>
-            <md-button class="md-primary md-raised" ng-click="vm.editEmployee(vm.newEmp)">
-              EDIT EMPLOYEE
+
+            <md-button class="md-primary md-raised" ng-click="vm.editEmployee($event)">
+              SAVE EMPLOYEE
             </md-button>
 
             <md-button class="md-primary md-raised" ng-click="vm.cancel()" >
