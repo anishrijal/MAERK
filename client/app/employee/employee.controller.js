@@ -19,7 +19,9 @@
                       this.showDelete = false;
                     }
                     else if(selected.length == 1){
-                      this.showOption = true;
+                      this.showOption =true;
+                      this.showOptions = ["Activate" , "Deactivate"];
+                      this.activate =this.showOptions[0];
                       this.showDelete = true;
                       this.showEdit =true;
                     }
@@ -31,6 +33,7 @@
 
 
               };
+
 
 
               this.edit = function(){

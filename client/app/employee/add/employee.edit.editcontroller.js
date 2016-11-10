@@ -23,7 +23,7 @@
             angular.copy(selectedEmp, this.newEmp);
             this.editEmployee = (e)=> {
                   this.editEmp = false;
-                  // console.log(e);
+                  // console.log(e.target.parentNode.parentNode.parentNode);
                   $mdToast.show({
                     parent: e.target.parentNode.parentNode.parentNode,
                     hideDelay: 0,

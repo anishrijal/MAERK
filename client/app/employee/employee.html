@@ -18,9 +18,11 @@
            </md-button>
 
            <span flex></span>
-           <md-select ng-show="vm.showOption" ng-model="vm.selectedUser">
-               <md-option ng-value="activate">activate</md-option>
-               <md-option ng-value="deactivate">Deactivate</md-option>
+
+            <md-select ng-model="vm.activate" ng-show="vm.showOption">
+                <md-option ng-repeat="item in vm.showOptions" value="{{item}}">
+                  {{item}}
+                </md-option>
             </md-select>
 
            <md-button class="md-icon-button" ng-click="vm.edit($eve)" ng-show='vm.showEdit'>
@@ -29,7 +31,7 @@
            <md-button class="md-icon-button" ng-click="vm.delete(rows)" ng-show='vm.showDelete'>
              <md-icon class="md-default-theme" class="material-icons">&#xE872;</md-icon>
            </md-button>
-          </div>
+        </div>
       </md-toolbar>
     </div>
 
