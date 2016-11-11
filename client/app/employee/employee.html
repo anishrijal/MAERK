@@ -20,8 +20,8 @@
            <span flex></span>
 
             <md-select ng-model="vm.activate" ng-show="vm.showOption">
-                <md-option ng-repeat="item in vm.showOptions" value="{{item}}">
-                  {{item}}
+                <md-option ng-repeat="item in vm.showOptions" ng-click="item.fn()" value="{{item.name}}">
+                  {{item.name}}
                 </md-option>
             </md-select>
 
@@ -45,15 +45,18 @@
                             'first_name',
                             'last_name',
                             'client',
+                            'activate',
                             'skill',
                             'recruiter',
                             'salary'
+
                         ]
                       }">
       <mdt-header-row>
         <mdt-column align-rule="left">First Name</mdt-column>
         <mdt-column align-rule="right">Last Name</mdt-column>
         <mdt-column align-rule="right">Client</mdt-column>
+        <mdt-column align-rule="right">Activate</mdt-column>
         <mdt-column align-rule="right">Skill</mdt-column>
         <mdt-column align-rule="right">Recruiter</mdt-column>
         <mdt-column align-rule="right">Salary</mdt-column>
