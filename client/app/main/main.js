@@ -13,5 +13,11 @@ angular.module('maerkApp')
       templateUrl: 'app/employee/employee.html',
       controller: 'EmployeeController',
       controllerAs: 'vm'
+    })
+    .state('main.skills',{
+      url: '/skills',
+      templateUrl: 'app/report/report.html',
+      controller: 'ReportController',
+      controllerAs: 'vm'
     });
   });
