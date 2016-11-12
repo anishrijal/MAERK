@@ -1,0 +1,162 @@
+<md-dialog flex="50">
+
+  <md-toolbar>
+      <div class="md-toolbar-tools">
+         <h2 text-align="center" ng-show="vm.addEmp">Add Employee</h2>
+         <h2 text-align="center" ng-show="vm.editEmp">Edit Employee</h2>
+
+       </div>
+  </md-toolbar>
+
+  <form name = "empForm" layout-padding novalidate>
+
+        <md-content  layout="row" layout-xs="column">
+            <md-input-container flex>
+              <label>First Name</label>
+              <input name = "first_name" type="text" ng-model="vm.newEmp.first_name" required ng-pattern="/^[^\W\d_]+$/" >
+              <div ng-messages="empForm.first_name.$error" ng-show="empForm.first_name.$dirty">
+                <div ng-message="required">please enter the first name of the employee(text)</div>
+                <div ng-message="pattern">please enter text only</div>
+              </div>
+            </md-input-container>
+            <md-input-container flex>
+              <label>Last Name</label>
+              <input name = "last_name" type="text" ng-model="vm.newEmp.last_name" required ng-pattern="/^[^\W\d_]+$/">
+              <div ng-messages="empForm.last_name.$error" ng-show="empForm.last_name.$dirty">
+                <div ng-message="required">please enter the last name of the employee(text)</div>
+                <div ng-message="pattern">please enter text only</div>
+              </div>
+            </md-input-container>
+        </md-content>
+
+        <md-content layout="row" layout-xs="column">
+            <md-input-container md-no-float flex>
+                <md-chips ng-model="vm.newEmp.client" placeholder="Client" ></md-chips>
+            </md-input-container>
+
+            <md-input-container md-no-float flex>
+              <md-chips ng-model="vm.newEmp.skill" placeholder="Skill"></md-chips>
+            </md-input-container>
+        </md-content>
+
+        <md-content layout="row" layout-xs="column">
+            <md-input-container flex>
+                  <label>Recruiter</label>
+                  <input name="recruiter" type="text" ng-model="vm.newEmp.recruiter" ng-pattern="/^[^\W\d_]+$/" required>
+                  <div ng-messages="empForm.recruiter.$error" ng-show="empForm.recruiter.$dirty">
+                    <div ng-message="required">please enter the recruiter's name(text)</div>
+                    <div ng-message="pattern">please enter text only</div>
+                  </div>
+            </md-input-container>
+            <md-input-container flex>
+              <label>Placement type</label>
+              <md-select ng-model="vm.newEmp.placement_type" required>
+                  <md-option ng-repeat="workType in vm.placeType" value="{{workType.types}}">
+                    {{workType.types}}
+                  </md-option>
+              </md-select>
+            </md-input-container>
+        </md-content>
+
+        <md-content layout="row" layout-xs="column">
+            <md-input-container flex>
+                  <label>Salary</label>
+                  <input name="salary" ng-model="vm.newEmp.salary" ng-pattern="/^\d+$/" required>
+                  <div ng-messages="empForm.salary.$error" ng-show="empForm.salary.$dirty">
+                    <div ng-message="required">please enter the number for salary</div>
+                    <div ng-message="pattern">please enter number only</div>
+                  </div>
+            </md-input-container>
+            <md-input-container flex>
+              <label>Insurance</label>
+              <input name="insurance" ng-model="vm.newEmp.insurance" ng-pattern="/^\d+$/" required>
+              <div ng-messages="empForm.insurance.$error" ng-show="empForm.insurance.$dirty">
+                <div ng-message="required">please enter the insurance(number)</div>
+                <div ng-message="pattern">please enter number only</div>
+              </div>
+            </md-input-container>
+        </md-content>
+
+
+        <md-content layout="row" layout-xs="column">
+            <md-input-container flex>
+                  <label>Relocation</label>
+                  <input name="relocation" ng-model="vm.newEmp.relocation" ng-pattern="/^\d+$/" required>
+                  <div ng-messages="empForm.relocation.$error" ng-show="empForm.relocation.$dirty">
+                    <div ng-message="required">please enter the amount for recolation(number)</div>
+                    <div ng-message="pattern">please enter number only</div>
+                  </div>
+            </md-input-container>
+            <md-input-container flex>
+              <label>immigration</label>
+              <input name="immigration" ng-model="vm.newEmp.immigration" ng-pattern="/^\d+$/" required>
+              <div ng-messages="empForm.immigration.$error" ng-show="empForm.immigration.$dirty">
+                <div ng-message="required">please enter the amount for immigration(number)</div>
+                <div ng-message="pattern">please enter number only</div>
+              </div>
+            </md-input-container>
+        </md-content>
+
+        <md-content layout="row" layout-xs="column">
+            <md-input-container flex>
+                  <label>Pay Vacation Cost</label>
+                  <input name="pay_vacation_cost" ng-model="vm.newEmp.pay_vacation_cost"  ng-pattern="/^\d+$/" required>
+                  <div ng-messages="empForm.pay_vacation_cost.$error" ng-show="empForm.pay_vacation_cost.$dirty">
+                    <div ng-message="required">please enter the amount for vacation cost(number)</div>
+                    <div ng-message="pattern">please enter number only</div>
+                  </div>
+            </md-input-container>
+            <md-input-container flex>
+              <label>Ksquare Hourly Cost</label>
+              <input name="Ksquare_hourly_cost" ng-model="vm.newEmp.Ksquare_hourly_cost"  ng-pattern="/^\d+$/" required>
+              <div ng-messages="empForm.Ksquare_hourly_cost.$error" ng-show="empForm.Ksquare_hourly_cost.$dirty">
+                <div ng-message="required">please enter the amount for hourly cost by Ksquare(number)</div>
+                <div ng-message="pattern">please enter number only</div>
+              </div>
+            </md-input-container>
+        </md-content>
+
+
+        <md-content layout="row" layout-xs="column">
+            <md-input-container flex>
+                  <label>Target Bill rate</label>
+                  <input name="target_bill_rate" ng-model="vm.newEmp.target_bill_rate"  ng-pattern="/^\d+$/" required>
+                  <div ng-messages="empForm.target_bill_rate.$error" ng-show="empForm.target_bill_rate.$dirty">
+                    <div ng-message="required">please enter the amount for target billing rate(number)</div>
+                    <div ng-message="pattern">please enter number only</div>
+                  </div>
+            </md-input-container>
+            <md-input-container flex>
+                  <label>Client Bill Pay</label>
+                  <input name="client_bill_pay" ng-model="vm.newEmp.client_bill_pay" ng-pattern="/^\d+$/" required>
+                  <div ng-messages="empForm.client_bill_pay.$error" ng-show="empForm.client_bill_pay.$dirty">
+                    <div ng-message="required">please enter the amount for bill pay for client(number)</div>
+                    <div ng-message="pattern">please enter number only</div>
+                  </div>
+            </md-input-container>
+        </md-content>
+
+        <md-content ng-show='vm.addEmp'>
+            <md-button class="md-primary md-raised" ng-disabled="empForm.$invalid" ng-click="vm.addEmployee(vm.newEmp)" >
+              ADD EMPLOYEE
+            </md-button>
+
+            <md-button class="md-primary md-raised" ng-click="vm.cancel()">
+              Cancel
+            </md-button>
+        </md-content>
+
+        <md-content ng-show='vm.editEmp'>
+
+            <md-button class="md-primary md-raised" ng-click="vm.editEmployee($event)">
+              SAVE EMPLOYEE
+            </md-button>
+
+            <md-button class="md-primary md-raised" ng-click="vm.cancel()" >
+              Cancel
+            </md-button>
+        </md-content>
+
+  </form>
+
+</md-dialog>

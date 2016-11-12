@@ -1,0 +1,33 @@
+<div layout-margin layout="column" flex>
+  <header>
+    <md-tabs>
+      <md-tab label="January"></md-tab>
+      <md-tab label="February"></md-tab>
+      <md-tab label="March"></md-tab>
+      <md-tab label="April"></md-tab>
+      <md-tab label="May"></md-tab>
+      <md-tab label="June"></md-tab>
+      <md-tab label="July"></md-tab>
+      <md-tab label="August"></md-tab>
+      <md-tab label="September"></md-tab>
+      <md-tab label="October"></md-tab>
+      <md-tab label="November"></md-tab>
+      <md-tab label="December"></md-tab>
+    </md-tabs>
+        <!-- <md-select ng-model="years">
+          <md-options>2014</md-options>
+          <md-options>2015</md-options>
+          <md-options>2016</md-options>
+        </md-select> -->
+  </header>
+  <div layout="row" flex layout-sm="column" layout-xs="column">
+      <div class="md-whiteframe-1dp" flex>
+          Table
+        <ui-view flex layout="column"></ui-view>
+      </div>
+      <div class="md-whiteframe-1dp" flex>
+          Chart
+        <ui-view flex layout="column"></ui-view>
+      </div>
+    </div>
+</div>
