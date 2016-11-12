@@ -22,24 +22,20 @@
              }
            }
          });
-       var reports = resource.query();
+
+      var reports = resource.query();
        return {
            getReport: reports,
            getOne:function(id){
              return resource.getOne({},{"_id":id})
            },
            create: function(report){
-
              new resource(report).$save().then(function (newReport){
                reports.push(newReport);
-
               //  $mdDialog.hide();
-
              })
-
            },
            update: function(report){
-
             //  resource.update({_id:report._id},report).$promise.then(function(newReport){
              //
             //    for (var i = 0; i < reports.length; i++) {
@@ -49,17 +45,10 @@
             //    }
               //  $mdToast.hide();
               //  $mdDialog.hide();
-              })
-
-            }
-
-       }
-
+              // }
+          }
      };
-
-
+   }
   angular.module('maerkApp')
     .factory('Report', ReportResource);
-
-
 })();
