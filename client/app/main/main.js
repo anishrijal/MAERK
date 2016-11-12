@@ -17,7 +17,13 @@ angular.module('maerkApp')
     .state('main.skills',{
       url: '/skills',
       templateUrl: 'app/report/report.html',
-      controller: 'ReportController',
+      controller: 'ReportSkillController',
+      controllerAs: 'vm'
+    })
+    .state('main.client',{
+      url: '/client',
+      templateUrl: 'app/report/report.html',
+      controller: 'ReportClientController',
       controllerAs: 'vm'
     });
   });

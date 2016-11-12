@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('maerkApp')
-        .controller('ReportController', function (Report) {
+        .controller('ReportSkillController', function (Report) {
         })
         this.reportList = Report.getReport;
 
