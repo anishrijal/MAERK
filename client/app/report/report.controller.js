@@ -3,8 +3,9 @@
 
     angular.module('maerkApp')
         .controller('ReportController', function (Report) {
-        })
-        this.reportList = Report.getReport;
+          this.reportList = Report.getReport;
+        });
+
 
 
 
