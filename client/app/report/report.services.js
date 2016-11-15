@@ -23,7 +23,7 @@
            }
          });
 
-      var selectedMonth= "january"
+
       var reports={
         year:2015,
         january:[{
@@ -72,17 +72,11 @@
         ]
       }
 
-      //  var test1=
-       //
-      //  var test2=
-
       //var reports = resource.query();
        return {
-          //  getJan: test1,
-          //  getFeb: test2,
-           getReport: reports[selectedMonth],
-           setMonth : function(){
 
+           getReport: function(month){
+            return reports[month]
            },
 
            getOne:function(id){

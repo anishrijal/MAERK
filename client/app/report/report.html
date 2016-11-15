@@ -2,8 +2,6 @@
 <div layout-margin layout="column" flex>
   <header>
     <md-tabs>
-      <!-- <md-tab label="January" ui-sref="({month:'january'})" ui-sref-opts="{reload: true}"></md-tab>
-      <md-tab label="February" ui-sref="({month:'february'})" ui-sref-opts="{reload: true}"></md-tab> -->
       <md-tab label="January" ng-click="vm.January()"></md-tab>
       <md-tab label="February" ng-click="vm.February()"></md-tab>
       <md-tab label="March" md-on-select ="March()"></md-tab>
@@ -21,10 +19,35 @@
   </header>
   <div layout="row" flex layout-sm="column" layout-xs="column">
       <div class="md-whiteframe-1dp" flex>
-        <div ui-view="table" flex layout="column"></div>
+        <div class ="table">
+            <md-toolbar>
+              <div class="md-toolbar-tools">
+                 <h2 text-align="center">Table</h2>
+              </div>
+            </md-toolbar>
+        </div>
+
+
+        <mdt-table mdt-row ="{
+                data: vm.dataReport,
+                'column-keys':vm.column
+              }">
+
+            <mdt-header-row>
+                <mdt-column ng-repeat="title in vm.headTitle">{{title}}</mdt-column>
+            </mdt-header-row>
+        </mdt-table>
+        <!-- <div ui-view="table" flex layout="column"></div> -->
       </div>
       <div class="md-whiteframe-1dp" flex>
-        <div ui-view="chart" flex layout="column"></div>
+        <div class="chart">
+          <md-toolbar>
+            <div class="md-toolbar-tools">
+               <h2 text-align="center">Chart</h2>
+            </div>
+          </md-toolbar>
+        </div>
+        <!-- <div ui-view="chart" flex layout="column"></div> -->
       </div>
     </div>
 
