@@ -26,4 +26,5 @@ angular.module('maerkApp')
       controller: 'ReportClientController',
       controllerAs: 'vm'
     });
+
   });
