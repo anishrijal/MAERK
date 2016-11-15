@@ -15,54 +15,50 @@ angular.module('maerkApp')
       controllerAs: 'vm'
     })
     .state('main.skills',{
+      abstract: true,
       url: '/skills',
+      templateUrl: 'app/report/report.html',
+      controller: 'ReportController',
+      controllerAs: 'vm'
+    })
+    .state('main.client',{
+      url: '/client',
       templateUrl: 'app/report/report.html',
       controller: 'ReportSkillController',
       controllerAs: 'vm'
     })
-    .state('main.skills.detail',{
-      view: {
-        'chart': {
-          templateUrl: 'app/report/report.chart.html'
-        },
-        'table': {
-          templateUrl: 'app/report/report.table.html'
+    .state('main.skills.report',{
+      url: '',
+      views: {
+          'table': {
+            templateUrl: 'app/report/report.table.html',
+            // template: '<emp-table class="flex layout-column"></emp-table>'
+            controller: 'ReportSkillController',
+            controllerAs: 'vm',
+            resolve:{
+              data:function(){
+                return true
+              }
+            }
+          },
+          'chart': {
+            templateUrl: 'app/report/report.chart.html'
+
+            // template: '<emp-chart class="flex layout-column"></emp-chart>'
+          }
         }
-      }
-    })
-    // .state('main.skills.chart',{
-    // })
-      // children: [
-      //   {
-      //     name: 'table',
-      //     templateUrl: 'app/report/report.table.html',
-      //   },
-      //   {
-      //     name: 'chart',
-      //     templateUrl: 'app/report/report.chart.html',
-      //   }]
-    // })
-    .state('main.client',{
+      })
+    .state('main.client.report',{
       url: '/client',
-      templateUrl: 'app/report/report.html',
-      controller: 'ReportClientController',
-      controllerAs: 'vm'
-    })
-    .state('main.client.table',{
-      templateUrl: 'app/report/report.table.html',
-    })
-    .state('main.client.chart',{
-      templateUrl: 'app/report/report.chart.html',
-    })
-    //   children: [
-    //     {
-    //       name: 'table',
-    //       templateUrl: 'app/report/report.table.html',
-    //     },
-    //     {
-    //       name: 'chart',
-    //       templateUrl: 'app/report/report.chart.html',
-    //     }]
-    // })
+      views: {
+          'table': {
+            templateUrl: 'app/report/report.table.html'
+          },
+          'chart': {
+            templateUrl: 'app/report/report.chart.html'
+          }
+        }
+
+      });
 
   });

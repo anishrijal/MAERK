@@ -1,6 +1,9 @@
 'use strict';
 
 import mongoose from 'mongoose';
+// import {EmployeeSchema} from '../employee/employee.model';
+
+// var EmployeeSchema = require('../employee/employee.model').Employee;
 
 var EmployeeSchema = new mongoose.Schema({
   first_name: {
@@ -66,10 +69,28 @@ var EmployeeSchema = new mongoose.Schema({
 
 });
 
-// var Employee = mongoose.model('Employee', EmployeeSchema);
-//
-// module.export = {
-//   Employee: Employee
-// }
 
-export default mongoose.model('Employee', EmployeeSchema);
+var ReportSchema = new mongoose.Schema({
+   year:{
+     type: Number,
+     required: true
+   },
+   january: [EmployeeSchema],
+   february: [EmployeeSchema],
+   march: [EmployeeSchema],
+   april: [EmployeeSchema],
+   may: [EmployeeSchema],
+   june: [EmployeeSchema],
+   july: [EmployeeSchema],
+   august: [EmployeeSchema],
+   september: [EmployeeSchema],
+   october: [EmployeeSchema],
+   november: [EmployeeSchema],
+   december: [EmployeeSchema]
+});
+
+
+
+
+
+export default mongoose.model('Report', ReportSchema);

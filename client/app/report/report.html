@@ -1,42 +1,31 @@
+
 <div layout-margin layout="column" flex>
   <header>
     <md-tabs>
-      <md-tab label="January" ui-sref=".detail"></md-tab>
-      <md-tab label="February"></md-tab>
-      <md-tab label="March"></md-tab>
-      <md-tab label="April"></md-tab>
-      <md-tab label="May"></md-tab>
-      <md-tab label="June"></md-tab>
-      <md-tab label="July"></md-tab>
-      <md-tab label="August"></md-tab>
-      <md-tab label="September"></md-tab>
-      <md-tab label="October"></md-tab>
-      <md-tab label="November"></md-tab>
-      <md-tab label="December"></md-tab>
+      <!-- <md-tab label="January" ui-sref="({month:'january'})" ui-sref-opts="{reload: true}"></md-tab>
+      <md-tab label="February" ui-sref="({month:'february'})" ui-sref-opts="{reload: true}"></md-tab> -->
+      <md-tab label="January" ng-click="vm.January()"></md-tab>
+      <md-tab label="February" ng-click="vm.February()"></md-tab>
+      <md-tab label="March" md-on-select ="March()"></md-tab>
+      <md-tab label="April" md-on-select ="April()"></md-tab>
+      <md-tab label="May" md-on-select ="May()"></md-tab>
+      <md-tab label="June" md-on-select ="June()"></md-tab>
+      <md-tab label="July" md-on-select ="July()"></md-tab>
+      <md-tab label="August" md-on-select ="August()"></md-tab>
+      <md-tab label="September" md-on-select ="September()"></md-tab>
+      <md-tab label="October" md-on-select ="October()"></md-tab>
+      <md-tab label="November" md-on-select ="November()"></md-tab>
+      <md-tab label="December" md-on-select ="December()"></md-tab>
     </md-tabs>
-        <!-- <md-select ng-model="years">
-          <md-options>2014</md-options>
-          <md-options>2015</md-options>
-          <md-options>2016</md-options>
-        </md-select> -->
 
-
-      <!-- <md-tab label="Year">
-        <md-select ng-model="years">
-          <md-options>2014</md-options>
-          <md-options>2015</md-options>
-          <md-options>2016</md-options>
-        </md-select>
-      </md-tab> -->
-
-    </md-tabs>
   </header>
   <div layout="row" flex layout-sm="column" layout-xs="column">
       <div class="md-whiteframe-1dp" flex>
-        <ui-view flex layout="column"></ui-view>
+        <div ui-view="table" flex layout="column"></div>
       </div>
       <div class="md-whiteframe-1dp" flex>
-        <ui-view flex layout="column"></ui-view>
+        <div ui-view="chart" flex layout="column"></div>
       </div>
     </div>
+
 </div>
