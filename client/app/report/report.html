@@ -1,5 +1,5 @@
 
-<div layout-margin layout="column" flex>
+<div layout-margin flex layout-gt-sm="column">
   <header>
     <md-tabs>
       <md-tab label="January" ng-click="vm.January()"></md-tab>
@@ -18,37 +18,40 @@
 
   </header>
   <div layout="row" flex layout-sm="column" layout-xs="column">
+
       <div class="md-whiteframe-1dp" flex>
-        <div class ="table">
+          <div class ="table">
+              <md-toolbar>
+                <div class="md-toolbar-tools">
+                   <h2 text-align="center">Table</h2>
+                </div>
+              </md-toolbar>
+          </div>
+          <mdt-table paginated-rows="{isEnabled: true, rowsPerPageValues: [5,10,20]}"
+                      mdt-row ="{
+                                data: vm.dataReport,
+                                'column-keys':vm.column
+                              }">
+              <mdt-header-row>
+                  <mdt-column ng-repeat="title in vm.headTitle">{{title}}</mdt-column>
+              </mdt-header-row>
+          </mdt-table>
+      </div>
+
+      <div class="md-whiteframe-1dp" flex layout='column'>
+          <div class="chart">
             <md-toolbar>
               <div class="md-toolbar-tools">
-                 <h2 text-align="center">Table</h2>
+                 <h2 text-align="center">Chart</h2>
               </div>
             </md-toolbar>
-        </div>
-
-
-        <mdt-table mdt-row ="{
-                data: vm.dataReport,
-                'column-keys':vm.column
-              }">
-
-            <mdt-header-row>
-                <mdt-column ng-repeat="title in vm.headTitle">{{title}}</mdt-column>
-            </mdt-header-row>
-        </mdt-table>
-        <!-- <div ui-view="table" flex layout="column"></div> -->
+          </div>
+          <div layout="row" layout-align="center center" flex >
+              <canvas id='pie' class="chart chart-pie" chart-data="vm.data" chart-labels="vm.labels" chart-options ="vm.options" chart-legend = "true" flex="50" >
+              </canvas>
+          </div>
       </div>
-      <div class="md-whiteframe-1dp" flex>
-        <div class="chart">
-          <md-toolbar>
-            <div class="md-toolbar-tools">
-               <h2 text-align="center">Chart</h2>
-            </div>
-          </md-toolbar>
-        </div>
-        <!-- <div ui-view="chart" flex layout="column"></div> -->
-      </div>
-    </div>
+      
+  </div>
 
 </div>
