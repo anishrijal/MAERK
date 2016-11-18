@@ -2,7 +2,7 @@
 
 (function() {
 
-  function ReportResource($resource) {
+  function ReportResource($resource, Employee) {
 
     var resource = $resource('/api/report/:id/:controller', {id: '@_id'},
          {
@@ -22,9 +22,7 @@
              }
            }
          });
-      //
-      // var labels =[];
-      // var data =[];
+
       var reports={
         year:2015,
         january:[{
@@ -93,38 +91,47 @@
           }]
       };
 
-      //var reports = resource.query();
+      var reports = resource.query();
+
        return {
+           getReportMonth: function(year, month){
+
+            return resource.getOne({year:year, month:month}).$promise
+
+           },
            getReport: function(month){
             return reports[month];
            },
            getSkill: function(month){
              var labels=[];
-            for(var i=0; i<reports[month].length; i++){
-              labels[i] =reports[month][i].skill;
-            }
+             for(var i=0; i<reports[month].length; i++){
+                  labels[i] =reports[month][i].skill;
+                }
             return labels;
            },
            getSalary: function(month){
              var data =[];
-            for(var i=0; i<reports[month].length; i++){
-              data[i] =reports[month][i].salary;
-            }
+             for(var i=0; i<reports[month].length; i++){
+                  data[i] =reports[month][i].salary;
+                }
             return data;
-          },
-           getOne:function(id){
-             return resource.getOne({},{"_id":id})
-           },
+            },
            create: function(report){
              new resource(report).$save().then(function (newReport){
                reports.push(newReport);
              })
            },
            update: function(report){
-
-          }
-
+             resource.update({_id:report._id},report).$promise.then(function(newReport){
+               for (var i = 0; i < reports.length; i++) {
+                    if (reports[i]._id == newReport._id) {
+                      reports[i] = newReport;
+                    }
+                }
+              })
+           }
      };
+
    }
   angular.module('maerkApp')
     .factory('Report', ReportResource);

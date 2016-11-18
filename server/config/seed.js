@@ -7,6 +7,7 @@
 import Thing from '../api/thing/thing.model';
 import User from '../api/user/user.model';
 import Employee from '../api/employee/employee.model';
+import Report from '../api/report/report.model';
 
 Thing.find({}).remove()
   .then(() => {
@@ -258,4 +259,338 @@ Employee.find({}).remove()
   "client_bill_pay": 87657,
   "activate": true
 })
+});
+
+Report.find({}).remove()
+  .then(() =>{
+    Report.create({
+      year: 2007,
+      January: [],
+      February:[],
+      March: [],
+      April: [],
+      May: [],
+      June: [],
+      July: [],
+      August: [],
+      September: [],
+      October: [],
+      November: [],
+      December: []
+      },
+      {
+      year: 2008,
+      January: [],
+      February:[],
+      March: [],
+      April: [],
+      May: [],
+      June: [],
+      July: [],
+      August: [],
+      September: [],
+      October: [],
+      November: [],
+      December: []
+      },
+      {
+      year: 2009,
+      January: [],
+      February:[],
+      March: [],
+      April: [],
+      May: [],
+      June: [],
+      July: [],
+      August: [],
+      September: [],
+      October: [],
+      November: [],
+      December: []
+      },
+      {
+      year: 2010,
+      January: [],
+      February:[],
+      March: [],
+      April: [],
+      May: [],
+      June: [],
+      July: [],
+      August: [],
+      September: [],
+      October: [],
+      November: [],
+      December: []
+      },
+      {
+      year: 2011,
+      January: [],
+      February:[],
+      March: [],
+      April: [],
+      May: [],
+      June: [],
+      July: [],
+      August: [],
+      September: [],
+      October: [],
+      November: [],
+      December: []
+      },
+      {
+      year: 2012,
+      January: [],
+      February:[],
+      March: [],
+      April: [],
+      May: [],
+      June: [],
+      July: [],
+      August: [],
+      September: [],
+      October: [],
+      November: [],
+      December: []
+      },
+      {
+      year: 2013,
+      January: [],
+      February:[],
+      March: [],
+      April: [],
+      May: [],
+      June: [],
+      July: [],
+      August: [],
+      September: [],
+      October: [],
+      November: [],
+      December: []
+      },
+      {
+      year: 2014,
+      January: [],
+      February:[],
+      March: [],
+      April: [],
+      May: [],
+      June: [],
+      July: [],
+      August: [],
+      September: [],
+      October: [],
+      November: [],
+      December: []
+      },
+      {
+      year: 2015,
+      January: [
+        {
+          "first_name": "Joe",
+          "last_name": "Walker",
+          "client": [
+            "Tavu",
+            "Gigaclub",
+            "Yodo"
+          ],
+          "skill": [
+            "Start-ups",
+            "NPO"
+          ],
+          "recruiter": "Ricky",
+          "placement_type": "project",
+          "salary": 56728,
+          "insurance": 264,
+          "relocation": 4818,
+          "immigration": 9962,
+          "pay_vacation_cost": 7896,
+          "Ksquare_hourly_cost": 55,
+          "target_bill_rate": 115543,
+          "client_bill_pay": 87657,
+          "activate": true
+          },
+          {
+            "first_name": "Paul",
+            "last_name": "Fuller",
+            "client": [
+              "Voolith"
+            ],
+            "skill": [
+              "UCC filings"
+            ],
+            "recruiter": "Rocky",
+            "placement_type": "project",
+            "salary": 73004,
+            "insurance": 613,
+            "relocation": 2500,
+            "immigration": 8485,
+            "pay_vacation_cost": 5729,
+            "Ksquare_hourly_cost": 50,
+            "target_bill_rate": 109610,
+            "client_bill_pay": 117599,
+            "activate": false
+          }
+        ],
+      February: [{
+        "first_name": "Tim",
+        "last_name": "Carter",
+        "client": [
+          "Browsedrive",
+          "Youtags",
+          "Divape"
+        ],
+        "skill": [
+          "OBIEE"
+        ],
+        "recruiter": "Arnold",
+        "placement_type": "project",
+        "salary": 76511,
+        "insurance": 941,
+        "relocation": 1557,
+        "immigration": 8014,
+        "pay_vacation_cost": 6971,
+        "Ksquare_hourly_cost": 65,
+        "target_bill_rate": 103492,
+        "client_bill_pay": 101606,
+        "activate": false
+      }, {
+        "first_name": "Blake",
+        "last_name": "Luke",
+        "client": [
+          "Brightdog",
+          "Thoughtstorm"
+        ],
+        "skill": [
+          "Lawson HRIS"
+        ],
+        "recruiter": "Bobby",
+        "placement_type": "part-time",
+        "salary": 86177,
+        "insurance": 346,
+        "relocation": 1280,
+        "immigration": 5571,
+        "pay_vacation_cost": 5269,
+        "Ksquare_hourly_cost": 55,
+        "target_bill_rate": 64198,
+        "client_bill_pay": 97347,
+        "activate": false
+      }],
+      March: [],
+      April: [],
+      May: [],
+      June: [],
+      July: [],
+      August: [],
+      September: [],
+      October: [],
+      November: [],
+      December: []
+
+    },
+    {
+    year: 2016,
+    January: [
+      {
+          "first_name": "Adam",
+          "last_name": "Griffin",
+          "client": [
+            "Mudo"
+          ],
+          "skill": [
+            "DDA"
+          ],
+          "recruiter": "Arnold",
+          "placement_type": "project",
+          "salary": 99895,
+          "insurance": 1000,
+          "relocation": 1715,
+          "immigration": 8451,
+          "pay_vacation_cost": 7072,
+          "Ksquare_hourly_cost": 55,
+          "target_bill_rate": 104574,
+          "client_bill_pay": 83784,
+          "activate": false
+        },
+        {
+          "first_name": "Patricia",
+          "last_name": "Bradley",
+          "client": [
+            "Flashdog",
+            "Dabtype",
+            "Topicshots"
+          ],
+          "skill": [
+            "Clinical Development"
+          ],
+          "recruiter": "Ricky",
+          "placement_type": "part-time",
+          "salary": 80613,
+          "insurance": 611,
+          "relocation": 3653,
+          "immigration": 9005,
+          "pay_vacation_cost": 6629,
+          "Ksquare_hourly_cost": 45,
+          "target_bill_rate": 65990,
+          "client_bill_pay": 111757,
+          "activate": false
+        }
+      ],
+    February: [{
+      "first_name": "Carolyn",
+      "last_name": "Cruz",
+      "client": [
+        "Browsedrive",
+        "Youtags",
+        "Divape"
+      ],
+      "skill": [
+        "OBIEE"
+      ],
+      "recruiter": "Arnold",
+      "placement_type": "project",
+      "salary": 76511,
+      "insurance": 941,
+      "relocation": 1557,
+      "immigration": 8014,
+      "pay_vacation_cost": 6971,
+      "Ksquare_hourly_cost": 65,
+      "target_bill_rate": 103492,
+      "client_bill_pay": 101606,
+      "activate": false
+    }, {
+      "first_name": "Timothy",
+      "last_name": "Ross",
+      "client": [
+        "Brightdog",
+        "Thoughtstorm"
+      ],
+      "skill": [
+        "Lawson HRIS"
+      ],
+      "recruiter": "Bobby",
+      "placement_type": "part-time",
+      "salary": 86177,
+      "insurance": 346,
+      "relocation": 1280,
+      "immigration": 5571,
+      "pay_vacation_cost": 5269,
+      "Ksquare_hourly_cost": 55,
+      "target_bill_rate": 64198,
+      "client_bill_pay": 97347,
+      "activate": false
+    }],
+    March: [],
+    April: [],
+    May: [],
+    June: [],
+    July: [],
+    August: [],
+    September: [],
+    October: [],
+    November: [],
+    December: []
+
+  })
+
 });

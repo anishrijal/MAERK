@@ -10,9 +10,6 @@
               var selected;
               this.employeeList = Employee.getEmployee;
 
-              console.log(this.employeeList.length);
-
-
               this.selectedRowCallback = function(rows){
                     selected = rows;
 

@@ -14,6 +14,12 @@ angular.module('maerkApp')
       controller: 'EmployeeController',
       controllerAs: 'vm'
     })
+    .state('main.register',{
+      url: '/register',
+      templateUrl: 'app/report/register/register.html',
+      controller: 'RegisterController',
+      controllerAs: 'vm'
+    })
     .state('main.skills',{
       url: '/skills',
       templateUrl: 'app/report/report.html',

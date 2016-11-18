@@ -59,7 +59,8 @@ export function index(req, res) {
 
 // Gets a single Report from the DB
 export function show(req, res) {
-  return Report.findById(req.params.id).exec()
+  console.log(req.query)
+  return Report.findOne({year:req.query.year},{year:1,[req.query.month]:1}).exec()
     .then(handleEntityNotFound(res))
     .then(respondWithResult(res))
     .catch(handleError(res));
