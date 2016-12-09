@@ -62,7 +62,13 @@ var EmployeeSchema = new mongoose.Schema({
                        type: Number,
                        required: true
                      },
- activate: {
+  monthly_hour: {
+                  type: Number
+                },
+  offset: {
+      type: Number
+  },
+  activate: {
            type: Boolean,
            default:true
          }
@@ -75,21 +81,19 @@ var ReportSchema = new mongoose.Schema({
      type: Number,
      required: true
    },
-   january: [EmployeeSchema],
-   february: [EmployeeSchema],
-   march: [EmployeeSchema],
-   april: [EmployeeSchema],
-   may: [EmployeeSchema],
-   june: [EmployeeSchema],
-   july: [EmployeeSchema],
-   august: [EmployeeSchema],
-   september: [EmployeeSchema],
-   october: [EmployeeSchema],
-   november: [EmployeeSchema],
-   december: [EmployeeSchema]
+   January: [EmployeeSchema],
+   February: [EmployeeSchema],
+   March: [EmployeeSchema],
+   April: [EmployeeSchema],
+   May: [EmployeeSchema],
+   June: [EmployeeSchema],
+   July: [EmployeeSchema],
+   August: [EmployeeSchema],
+   September: [EmployeeSchema],
+   October: [EmployeeSchema],
+   November: [EmployeeSchema],
+   December: [EmployeeSchema]
 });
-
-
 
 
 

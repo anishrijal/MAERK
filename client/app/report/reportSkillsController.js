@@ -4,11 +4,24 @@
     angular.module('maerkApp')
         .controller('ReportSkillController', function (Report) {
           this.labels=[];
-          this.column =["first_name", "last_name", "skill", "salary"];
-          this.headTitle =["First Name", "Last Name", "Skill", "Salary"];
+          this.column =["count", "skill", "salary"];
+          this.headTitle =["Count", "Skill", "Salary"];
+          var min=2007;
+          var max = new Date().getFullYear();
+          var year =[];
+          for(var i=min; i<=max; i++)
+          {
+           year.push(i);
+          }
+          this.year = year;
+          var date= new Date();
+          var yr=date.getFullYear();
+          this.default=[yr];
 
           this.January = function(){
-            this.dataReport= Report.getReport('january');
+            console.log(yr);
+            Report.getReportMonth(yr,'january');
+            this.dataReport= Report.getReportYear(yr,'january');
             this.labels = Report.getSkill('january');
             this.data = Report.getSalary('january');
 

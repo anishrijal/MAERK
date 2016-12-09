@@ -1,18 +1,18 @@
  <div class="main-view-container" flex layout='row' layout-fill>
-       <md-sidenav class="md-sidenav-left md-whiteframe-z2"
-               md-component-id="left"  md-is-locked-open="$mdMedia('gt-md')"
-                md-whiteframe="4" layout='column'>
-           <md-toolbar layout="row">
-            <div class="md-toolbar-tools">
-               <h2 text-align="center">Side Nav</h2>
-               <span flex></span>
-               <md-button class="md-icon-button" aria-label="Close Side Panel" ng-click="vm.closeSidenav()" hide-gt-md>
-                 <md-icon class="md-default-theme" class="material-icons">&#xE5CD;</md-icon>
-               </md-button>
-              </div>
-           </md-toolbar>
+     <md-sidenav class="md-sidenav-left md-whiteframe-z2"
+             md-component-id="left"  md-is-locked-open="$mdMedia('gt-md')"
+              md-whiteframe="4" layout='column'>
+         <md-toolbar layout="row">
+          <div class="md-toolbar-tools">
+             <h2 text-align="center">Side Nav</h2>
+             <span flex></span>
+             <md-button class="md-icon-button" aria-label="Close Side Panel" ng-click="vm.closeSidenav()" hide-gt-md>
+               <md-icon class="md-default-theme" class="material-icons">&#xE5CD;</md-icon>
+             </md-button>
+            </div>
+         </md-toolbar>
 
-            <md-menu>
+          <md-menu>
               <md-button md-no-ink class="md-primary" ng-click="vm.openMenu($mdOpenMenu, $event)" layout-fill>
                 Report</md-button>
               <md-menu-content width="4">
@@ -20,17 +20,14 @@
                 <md-menu-item><md-button md-no-ink class="md-primary" ui-sref=".client">Clients</md-button></md-menu-item>
                 <md-menu-item><md-button md-no-ink class="md-primary" ui-sref="main">Recruiter</md-button></md-menu-item>
               </md-menu-content>
-            </md-menu>
+          </md-menu>
 
-           <md-button md-no-ink class="md-primary" ui-sref=".employee">Employee</md-button>
-           <md-button md-no-ink class="md-primary">Recruiter</md-button>
-           <md-button md-no-ink class="md-primary">Quarterly</md-button>
+         <md-button md-no-ink class="md-primary" ui-sref=".employee">Employee</md-button>
+         <md-button md-no-ink class="md-primary" ui-sref=".register">Register Month</md-button>
 
+     </md-sidenav>
 
-       </md-sidenav>
-
-
-       <ui-view flex layout="column"></ui-view>
+     <ui-view flex layout="column"></ui-view>
 
 
 </div>
