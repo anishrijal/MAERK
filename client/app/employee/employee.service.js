@@ -1,9 +1,7 @@
 'use strict';
 
 (function() {
-
   function EmployeeResource($resource, $mdDialog, $mdToast) {
-
     var resource = $resource('/api/employee/:id/:controller', {id: '@_id'},
          {
            create: {
@@ -30,20 +28,13 @@
              return resource.getOne({},{"_id":id})
            },
            create: function(employee){
-
              new resource(employee).$save().then(function (newEmployee){
-              //  console.log(newEmployee);
                employees.push(newEmployee);
-
                $mdDialog.hide();
-
              })
-
            },
            update: function(employee){
-
              resource.update({_id:employee._id},employee).$promise.then(function(newEmployee){
-
                for (var i = 0; i < employees.length; i++) {
                     if (employees[i]._id == newEmployee._id) {
                       employees[i] = newEmployee;
@@ -52,16 +43,9 @@
                $mdToast.hide();
                $mdDialog.hide();
               })
-
             }
-
        }
-
      };
-
-
   angular.module('maerkApp')
     .factory('Employee', EmployeeResource);
-
-
 })();

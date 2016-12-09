@@ -78,9 +78,9 @@ export function update(req, res) {
   if (req.body._id) {
     delete req.body._id;
   }
-  return Report.findById(req.params.id).exec()
-    .then(handleEntityNotFound(res))
-    .then(saveUpdates(req.body))
-    .then(respondWithResult(res))
-    .catch(handleError(res));
+    return Report.findById(req.params.id).exec()
+      .then(handleEntityNotFound(res))
+      .then(saveUpdates(req.body))
+      .then(respondWithResult(res))
+      .catch(handleError(res));
 }

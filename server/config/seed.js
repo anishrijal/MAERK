@@ -149,93 +149,98 @@ Employee.find({}).remove()
   "target_bill_rate": 89969,
   "client_bill_pay": 106938,
   "activate": false
-}, {
-  "first_name": "Clarence",
-  "last_name": "Coleman",
-  "client": [
-    "Latz",
-    "Wordify",
-    "Mycat"
-  ],
-  "skill": [
-    "SAP Business ByDesign",
-    "DVD Authoring"
-  ],
-  "recruiter": "Ricky",
-  "placement_type": "full-time",
-  "salary": 63776,
-  "insurance": 386,
-  "relocation": 3961,
-  "immigration": 7070,
-  "pay_vacation_cost": 6762,
-  "Ksquare_hourly_cost": 35,
-  "target_bill_rate": 106396,
-  "client_bill_pay": 84250,
-  "activate": true
-}, {
-  "first_name": "Carolyn",
-  "last_name": "Cruz",
-  "client": [
-    "Browsedrive",
-    "Youtags",
-    "Divape"
-  ],
-  "skill": [
-    "OBIEE"
-  ],
-  "recruiter": "Arnold",
-  "placement_type": "project",
-  "salary": 76511,
-  "insurance": 941,
-  "relocation": 1557,
-  "immigration": 8014,
-  "pay_vacation_cost": 6971,
-  "Ksquare_hourly_cost": 65,
-  "target_bill_rate": 103492,
-  "client_bill_pay": 101606,
-  "activate": false
-}, {
-  "first_name": "Timothy",
-  "last_name": "Ross",
-  "client": [
-    "Brightdog",
-    "Thoughtstorm"
-  ],
-  "skill": [
-    "Lawson HRIS"
-  ],
-  "recruiter": "Bobby",
-  "placement_type": "part-time",
-  "salary": 86177,
-  "insurance": 346,
-  "relocation": 1280,
-  "immigration": 5571,
-  "pay_vacation_cost": 5269,
-  "Ksquare_hourly_cost": 55,
-  "target_bill_rate": 64198,
-  "client_bill_pay": 97347,
-  "activate": false
-}, {
-  "first_name": "Paul",
-  "last_name": "Fuller",
-  "client": [
-    "Voolith"
-  ],
-  "skill": [
-    "UCC filings"
-  ],
-  "recruiter": "Rocky",
-  "placement_type": "project",
-  "salary": 73004,
-  "insurance": 613,
-  "relocation": 2500,
-  "immigration": 8485,
-  "pay_vacation_cost": 5729,
-  "Ksquare_hourly_cost": 50,
-  "target_bill_rate": 109610,
-  "client_bill_pay": 117599,
-  "activate": false
-}, {
+},
+// {
+//   "first_name": "Clarence",
+//   "last_name": "Coleman",
+//   "client": [
+//     "Latz",
+//     "Wordify",
+//     "Mycat"
+//   ],
+//   "skill": [
+//     "SAP Business ByDesign",
+//     "DVD Authoring"
+//   ],
+//   "recruiter": "Ricky",
+//   "placement_type": "full-time",
+//   "salary": 63776,
+//   "insurance": 386,
+//   "relocation": 3961,
+//   "immigration": 7070,
+//   "pay_vacation_cost": 6762,
+//   "Ksquare_hourly_cost": 35,
+//   "target_bill_rate": 106396,
+//   "client_bill_pay": 84250,
+//   "activate": true
+// }, 
+// {
+//   "first_name": "Carolyn",
+//   "last_name": "Cruz",
+//   "client": [
+//     "Browsedrive",
+//     "Youtags",
+//     "Divape"
+//   ],
+//   "skill": [
+//     "OBIEE"
+//   ],
+//   "recruiter": "Arnold",
+//   "placement_type": "project",
+//   "salary": 76511,
+//   "insurance": 941,
+//   "relocation": 1557,
+//   "immigration": 8014,
+//   "pay_vacation_cost": 6971,
+//   "Ksquare_hourly_cost": 65,
+//   "target_bill_rate": 103492,
+//   "client_bill_pay": 101606,
+//   "activate": false
+// },
+// {
+//   "first_name": "Timothy",
+//   "last_name": "Ross",
+//   "client": [
+//     "Brightdog",
+//     "Thoughtstorm"
+//   ],
+//   "skill": [
+//     "Lawson HRIS"
+//   ],
+//   "recruiter": "Bobby",
+//   "placement_type": "part-time",
+//   "salary": 86177,
+//   "insurance": 346,
+//   "relocation": 1280,
+//   "immigration": 5571,
+//   "pay_vacation_cost": 5269,
+//   "Ksquare_hourly_cost": 55,
+//   "target_bill_rate": 64198,
+//   "client_bill_pay": 97347,
+//   "activate": false
+// },
+// {
+//   "first_name": "Paul",
+//   "last_name": "Fuller",
+//   "client": [
+//     "Voolith"
+//   ],
+//   "skill": [
+//     "UCC filings"
+//   ],
+//   "recruiter": "Rocky",
+//   "placement_type": "project",
+//   "salary": 73004,
+//   "insurance": 613,
+//   "relocation": 2500,
+//   "immigration": 8485,
+//   "pay_vacation_cost": 5729,
+//   "Ksquare_hourly_cost": 50,
+//   "target_bill_rate": 109610,
+//   "client_bill_pay": 117599,
+//   "activate": false
+// },
+{
   "first_name": "Joe",
   "last_name": "Walker",
   "client": [

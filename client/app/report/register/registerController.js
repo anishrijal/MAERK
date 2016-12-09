@@ -1,46 +1,66 @@
 (function () {
     'use strict';
-
     angular.module('maerkApp')
-        .controller('RegisterController', function (Employee, Report) {
-          var yr=2016;
-          var currentReport;
-          var mt ="January"
-          this.reportList= Employee.getEmployee;
+        .controller('RegisterController', function (Employee, Report, $mdDialog, getDefault) {
+          this.month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+          var date= new Date();
+          var yr=date.getFullYear();
+          var mt =this.month[date.getMonth()];
+          this.default=[mt, yr];
+          var currentReport = {
+                                year: yr,
+                                [mt] : Employee.getEmployee.map(function(item){
+                                  return angular.copy(item)
+                                })
+                            };
+          this.reportList= currentReport[mt];
           this.selected=[];
-          this.getObj= function(year){
+          this.getObj= function(year, mt){
             yr=year;
             this.getData(mt);
           }
           this.getData = function(month){
             mt=month;
             Report.getReportMonth(yr,mt).then((report)=>{
-               currentReport = report;
+               currentReport = {
+                                  year: yr,
+                                  _id:report._id,
+                                  [mt]: Employee.getEmployee.map(function(item){
+                                    return angular.copy(item)
+                                  })
+                                }
                if(report[mt].length!=0){
+                  currentReport = report;
                  this.reportList=report[mt];
                }
                else{
-                 this.reportList= Employee.getEmployee;
+                 this.reportList=currentReport[mt];
                };
              })
           }
-          this.selectedRowCallback = function(row){
-            console.log(this.reportList);
-            console.log(row.monthly_hour, row.offset);
-          }
           this.submit = function(){
-            Report.update(currentReport);
+              $mdDialog.show({
+                controller: 'saveController',
+                controllerAs: 'vm',
+                template: '<div>Are you sure you want to Submit<div>'+
+                              '<md-button ng-click="vm.submitMonth()">Yes</md-button>'+
+                              '<md-button ng-click="vm.cancel()">No</md-button>',
+                parent: angular.element(document.body),
+                locals: {
+                  currentReport: currentReport
+                },
+                clickOutsideToClose:true
+              })
           }
           this.save= function(){
-
+            var mtt;
             for(var i=0 ;i<this.month.length; i++){
-              if(this.month[i]!=mt)
+              if(this.month[i]==mt)
               {
-                mt = this.month[i+1];
+                mtt= this.month[i+1];
               }
             }
           }
-
           this.length= function(){
             return this.reportList.length;
           }
@@ -48,8 +68,7 @@
              limit: 5,
              page: 1
            };
-           this.default=["January", "2016"];
-           this.month = ["January","February","March","April","May","June","July","August","September","October","november","December"];
+
            var min=2007;
            var max = new Date().getFullYear();
            var year =[];

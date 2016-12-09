@@ -18,7 +18,12 @@ angular.module('maerkApp')
       url: '/register',
       templateUrl: 'app/report/register/register.html',
       controller: 'RegisterController',
-      controllerAs: 'vm'
+      controllerAs: 'vm',
+      resolve: {
+        getDefault: function(Employee){
+          return Employee.getEmployee.$promise;
+        }
+      }
     })
     .state('main.skills',{
       url: '/skills',
