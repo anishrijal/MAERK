@@ -64,7 +64,7 @@
            getRecruiter: function(report, month){
              var labels=[];
              for(var i=0; i<report[month].length; i++){
-                  labels[i] = {client:report[month][i].client, salary:report[month][i].salary};
+                  labels[i] = {recruiter:report[month][i].recruiter, salary:report[month][i].salary};
                 }
             return labels;
            },
