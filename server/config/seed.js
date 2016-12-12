@@ -70,7 +70,7 @@ Employee.find({}).remove()
     "Mudo"
   ],
   "skill": [
-    "DDA"
+    "C#"
   ],
   "recruiter": "Arnold",
   "placement_type": "project",
@@ -93,7 +93,7 @@ Employee.find({}).remove()
     "Topicshots"
   ],
   "skill": [
-    "Clinical Development"
+    "C#"
   ],
   "recruiter": "Ricky",
   "placement_type": "part-time",
@@ -113,7 +113,7 @@ Employee.find({}).remove()
     "Kazio"
   ],
   "skill": [
-    "Screening"
+    "SQL"
   ],
   "recruiter": "Bobby",
   "placement_type": "part-time",
@@ -135,8 +135,7 @@ Employee.find({}).remove()
     "Yodo"
   ],
   "skill": [
-    "JavaSE",
-    "Knowledge Sharing"
+    "Java"
   ],
   "recruiter": "Ricky",
   "placement_type": "full-time",
@@ -173,7 +172,7 @@ Employee.find({}).remove()
 //   "target_bill_rate": 106396,
 //   "client_bill_pay": 84250,
 //   "activate": true
-// }, 
+// },
 // {
 //   "first_name": "Carolyn",
 //   "last_name": "Cruz",
@@ -197,49 +196,49 @@ Employee.find({}).remove()
 //   "client_bill_pay": 101606,
 //   "activate": false
 // },
-// {
-//   "first_name": "Timothy",
-//   "last_name": "Ross",
-//   "client": [
-//     "Brightdog",
-//     "Thoughtstorm"
-//   ],
-//   "skill": [
-//     "Lawson HRIS"
-//   ],
-//   "recruiter": "Bobby",
-//   "placement_type": "part-time",
-//   "salary": 86177,
-//   "insurance": 346,
-//   "relocation": 1280,
-//   "immigration": 5571,
-//   "pay_vacation_cost": 5269,
-//   "Ksquare_hourly_cost": 55,
-//   "target_bill_rate": 64198,
-//   "client_bill_pay": 97347,
-//   "activate": false
-// },
-// {
-//   "first_name": "Paul",
-//   "last_name": "Fuller",
-//   "client": [
-//     "Voolith"
-//   ],
-//   "skill": [
-//     "UCC filings"
-//   ],
-//   "recruiter": "Rocky",
-//   "placement_type": "project",
-//   "salary": 73004,
-//   "insurance": 613,
-//   "relocation": 2500,
-//   "immigration": 8485,
-//   "pay_vacation_cost": 5729,
-//   "Ksquare_hourly_cost": 50,
-//   "target_bill_rate": 109610,
-//   "client_bill_pay": 117599,
-//   "activate": false
-// },
+{
+  "first_name": "Timothy",
+  "last_name": "Ross",
+  "client": [
+    "Brightdog",
+    "Thoughtstorm"
+  ],
+  "skill": [
+    "C#"
+  ],
+  "recruiter": "Bobby",
+  "placement_type": "part-time",
+  "salary": 86177,
+  "insurance": 346,
+  "relocation": 1280,
+  "immigration": 5571,
+  "pay_vacation_cost": 5269,
+  "Ksquare_hourly_cost": 55,
+  "target_bill_rate": 64198,
+  "client_bill_pay": 97347,
+  "activate": false
+},
+{
+  "first_name": "Paul",
+  "last_name": "Fuller",
+  "client": [
+    "Voolith"
+  ],
+  "skill": [
+    "JavaScript"
+  ],
+  "recruiter": "Rocky",
+  "placement_type": "project",
+  "salary": 73004,
+  "insurance": 613,
+  "relocation": 2500,
+  "immigration": 8485,
+  "pay_vacation_cost": 5729,
+  "Ksquare_hourly_cost": 50,
+  "target_bill_rate": 109610,
+  "client_bill_pay": 117599,
+  "activate": false
+},
 {
   "first_name": "Joe",
   "last_name": "Walker",
@@ -249,8 +248,7 @@ Employee.find({}).remove()
     "Yodo"
   ],
   "skill": [
-    "Start-ups",
-    "NPO"
+    "JavaScript"
   ],
   "recruiter": "Ricky",
   "placement_type": "project",

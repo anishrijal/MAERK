@@ -24,105 +24,36 @@
            }
          });
 
-      var report={
-        year:2015,
-        january:[{
-          first_name: "Kathryn",
-          last_name: "Ramos",
-          client: "Tmobile",
-          skill: "JavaScript",
-          recruiter: "Bobby",
-          salary: 91679,
-          pay_vacation_cost: 6361
-          },
-          {
-          first_name: "Anish",
-          last_name: "Rijal ",
-          client: "Verison",
-          skill: "Css",
-          recruiter: "Bobby",
-          salary: 25000,
-          pay_vacation_cost: 6361
-          },
-          {
-          first_name: "Kanye",
-          last_name: "West",
-          client: "At&t",
-          skill: "HTML",
-          recruiter: "Bobby",
-          salary: 70090,
-          pay_vacation_cost: 6361
-          },
-          {
-          first_name: "Donald",
-          last_name: "Trump",
-          client: "At&t",
-          skill: "Node",
-          recruiter: "Bobby",
-          salary: 11090,
-          pay_vacation_cost: 6361
-          }
-      ],
-        february:[{
-          first_name: "Anish",
-          last_name: "Rijal",
-          client: "At&t",
-          skill: "Csharp",
-          recruiter: "Bobby",
-          salary: 70000,
-          pay_vacation_cost: 6361
-          },
-          {
-          first_name: "Donovan",
-          last_name: "Perry",
-          client: "Verison",
-          skill: "Java",
-          recruiter: "Bobby",
-          salary: 91890,
-          pay_vacation_cost: 6361
-          },
-          {
-          first_name: "Doan",
-          last_name: "Per",
-          client: "Tmobile",
-          skill: "JavaScript",
-          recruiter: "Bobby",
-          salary: 91890,
-          pay_vacation_cost: 6361
-          }]
-      };
-      var yearId;
       var reports = resource.query();
 
        return {
            getReportMonth: function(year, month){
-
             return resource.getOne({year:year, month:month}).$promise
-            // return resource.getOne({year:year, month:month})
-
            },
            getReport: function(month){
             return report[month];
            },
-           getReportYear: function(year, month){
-            console.log(year, month);
-            console.log(reports.length);
-          },
-           getSkill: function(month){
+           getSkill: function(report, month){
              var labels=[];
-
              for(var i=0; i<report[month].length; i++){
-                  labels[i] =report[month][i].skill;
+                  labels[i] = {skill:report[month][i].skill, salary:report[month][i].salary};
                 }
             return labels;
            },
-           getSalary: function(month){
+           getLabels: function(count){
              var data =[];
-             for(var i=0; i<report[month].length; i++){
-                  data[i] =report[month][i].salary;
+             for(var i=0; i<count.length; i++){
+                  data[i] =count[i].skill;
                 }
             return data;
             },
+            getData: function(count){
+              var dat =[];
+              for(var i=0; i<count.length; i++){
+                   dat[i] =count[i].salary;
+                 }
+             return dat;
+             },
            create: function(report){
              new resource(report).$save().then(function (newReport){
                reports.push(newReport);
@@ -138,7 +69,6 @@
                 })
            }
      };
-
    }
   angular.module('maerkApp')
     .factory('Report', ReportResource);
