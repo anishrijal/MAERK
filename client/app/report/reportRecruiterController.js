@@ -2,12 +2,12 @@
     'use strict';
 
     angular.module('maerkApp')
-        .controller('ReportClientController', function (Report) {
+        .controller('ReportRecruiterController', function (Report) {
 
           this.label=[];
           this.labels=[];
-          this.column =["count", "client", "salary"];
-          this.headTitle =["Count", "Client", "Salary"];
+          this.column =["count", "recruiter", "salary"];
+          this.headTitle =["Count", "Recruiter", "Salary"];
           var min=2007;
           var max = new Date().getFullYear();
           var year =[];
@@ -21,21 +21,21 @@
 
           this.month = function(month){
                      Report.getReportMonth(yr, month).then((report)=>{
-                       this.label = Report.getClient(report, month);
+                       this.label = Report.getRecruiter(report, month);
                        var hashmap={};
                        var  count = [];
                        for(var i=0; i<this.label.length; i++){
-                         if(hashmap[this.label[i].client]){
-                           hashmap[this.label[i].client].count++;
-                           hashmap[this.label[i].client].salary+= this.label[i].salary;
+                         if(hashmap[this.label[i].recruiter]){
+                           hashmap[this.label[i].recruiter].count++;
+                           hashmap[this.label[i].recruiter].salary+= this.label[i].salary;
                          }
                          else{
-                           hashmap[this.label[i].client]={
-                             client: this.label[i].client,
+                           hashmap[this.label[i].recruiter]={
+                             recruiter: this.label[i].recruiter,
                              count: 1,
                              salary: this.label[i].salary
                            }
-                           count.push(hashmap[this.label[i].client]);
+                           count.push(hashmap[this.label[i].recruiter]);
                          }
                        }
                        this.dataReport = count;

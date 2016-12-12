@@ -36,6 +36,12 @@ angular.module('maerkApp')
       templateUrl: 'app/report/report.html',
       controller: 'ReportClientController',
       controllerAs: 'vm'
+    })
+    .state('main.recruiter',{
+      url: '/recruiter',
+      templateUrl: 'app/report/report.html',
+      controller: 'ReportRecruiterController',
+      controllerAs: 'vm'
     });
 
   });
