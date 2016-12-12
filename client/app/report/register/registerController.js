@@ -29,6 +29,7 @@
                                     return angular.copy(item)
                                   })
                                 }
+                                //
                if(report[mt].length!=0){
                   currentReport = report;
                  this.reportList=report[mt];
