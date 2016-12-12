@@ -1,0 +1,29 @@
+<div layout-margin>
+    <div>
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+           <h2 text-align="center">Register Month</h2>
+        </div>
+      </md-toolbar>
+    </div>
+
+    <mdt-table  paginated-rows="{isEnabled: true, rowsPerPageValues: [5,10,20]}"
+                selected-row-callback="vm.selectedRowCallback(rows)"
+                mdt-row="{
+                        data: vm.reportList,
+                        'table-row-id-key': '_id',
+                        'column-keys': [
+                            'first_name',
+                            'last_name'
+
+                        ]
+                      }">
+      <mdt-header-row>
+        <mdt-column align-rule="left">First Name</mdt-column>
+        <mdt-column align-rule="right">Last Name</mdt-column>
+        <mdt-column align-rule="right">Monthly Hour</mdt-column>
+        <mdt-column align-rule="right">Other</mdt-column>
+      </mdt-header-row>
+
+    </mdt-table>
+</div>

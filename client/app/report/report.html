@@ -1,0 +1,54 @@
+
+<div layout-margin flex layout-gt-sm="column">
+  <header>
+    <div layout='row'>
+      <div>
+        <md-select ng-model="vm.default[0]" aria-label="Close">
+            <md-option ng-repeat="item in vm.year" value={{item}} ng-click="vm.getObj(item)">
+              {{item}}
+            </md-option>
+        </md-select>
+      </div>
+      <div flex>
+          <md-tabs><md-tab ng-repeat="tab in vm.tabs" label="{{tab}}" ng-click="vm.month(tab)"></md-tab></md-tabs>
+      </div>
+    </div>
+  </header>
+  <div layout="row" flex layout-sm="column" layout-xs="column">
+
+      <div class="md-whiteframe-1dp" flex>
+          <div class ="table">
+              <md-toolbar>
+                <div class="md-toolbar-tools">
+                   <h2 text-align="center">Table</h2>
+                </div>
+              </md-toolbar>
+          </div>
+          <mdt-table paginated-rows="{isEnabled: true, rowsPerPageValues: [5,10,20]}"
+                      mdt-row ="{
+                                data: vm.dataReport,
+                                'column-keys':vm.column
+                              }">
+              <mdt-header-row>
+                  <mdt-column ng-repeat="title in vm.headTitle">{{title}}</mdt-column>
+              </mdt-header-row>
+          </mdt-table>
+      </div>
+
+      <div class="md-whiteframe-1dp" flex layout='column'>
+          <div class="chart">
+            <md-toolbar>
+              <div class="md-toolbar-tools">
+                 <h2 text-align="center">Chart</h2>
+              </div>
+            </md-toolbar>
+          </div>
+          <div layout="row" layout-align="center center" flex >
+              <canvas id='pie' class="chart chart-pie" chart-data="vm.data" chart-labels="vm.labels" chart-options ="vm.options" chart-legend = "true" flex="50" >
+              </canvas>
+          </div>
+      </div>
+
+  </div>
+
+</div>
