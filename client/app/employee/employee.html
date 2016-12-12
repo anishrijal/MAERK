@@ -1,0 +1,73 @@
+<div layout-margin>
+
+      <md-input-container style='margin: 15px;'>
+        <label>Search</label>
+        <input type="text" ng-model="filterName">
+      </md-input-container>
+
+      <div ng-hide="true">
+              {{(employeeFiltered = (vm.employeeList | filter: filterName))}}
+      </div>
+      <div>
+      <md-toolbar>
+
+        <div class="md-toolbar-tools">
+           <h2 text-align="center">Employee</h2>
+           <md-button ng-click="vm.add($event)">
+             <md-icon class="md-default-theme" class="material-icons">&#xE145;</md-icon>
+           </md-button>
+
+           <span flex></span>
+
+            <md-select ng-model="vm.activate" ng-show="vm.showOption">
+                <md-option ng-repeat="item in vm.showOptions" ng-click="item.fn()" value="{{item.name}}">
+                  {{item.name}}
+                </md-option>
+            </md-select>
+
+           <md-button class="md-icon-button" ng-click="vm.edit($eve)" ng-show='vm.showEdit'>
+             <md-icon class="md-default-theme" class="material-icons">&#xE254;</md-icon>
+           </md-button>
+           <md-button class="md-icon-button" ng-click="vm.delete(rows)" ng-show='vm.showDelete'>
+             <md-icon class="md-default-theme" class="material-icons">&#xE872;</md-icon>
+           </md-button>
+        </div>
+      </md-toolbar>
+    </div>
+
+    <mdt-table  selectable-rows="true",
+                paginated-rows="{isEnabled: true, rowsPerPageValues: [5,10,20]}"
+                selected-row-callback="vm.selectedRowCallback(rows)"
+                mdt-row="{
+                        data: employeeFiltered,
+                        'table-row-id-key': '_id',
+                        'column-keys': [
+                            'first_name',
+                            'last_name',
+                            'client',
+                            'activate',
+                            'skill',
+                            'recruiter',
+                            'salary'
+
+                        ]
+                      }">
+      <mdt-header-row>
+        <mdt-column align-rule="left">First Name</mdt-column>
+        <mdt-column align-rule="right">Last Name</mdt-column>
+        <mdt-column align-rule="right">Client</mdt-column>
+        <mdt-column align-rule="right">Activate</mdt-column>
+        <mdt-column align-rule="right">Skill</mdt-column>
+        <mdt-column align-rule="right">Recruiter</mdt-column>
+        <mdt-column align-rule="right">Salary</mdt-column>
+      </mdt-header-row>
+
+      <mdt-custom-cell column-key="skill" >
+            <span ng-class="{}">{{value}}</span>
+      </mdt-custom-cell>
+      <mdt-custom-cell column-key="client" >
+              <span ng-class="{}">{{value}}</span>
+      </mdt-custom-cell>
+
+    </mdt-table>
+</div>
