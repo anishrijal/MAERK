@@ -67,7 +67,7 @@ Employee.find({}).remove()
   "first_name": "Adam",
   "last_name": "Griffin",
   "client": [
-    "Mudo"
+    "Tavu"
   ],
   "skill": [
     "C#"
@@ -88,9 +88,7 @@ Employee.find({}).remove()
   "first_name": "Patricia",
   "last_name": "Bradley",
   "client": [
-    "Flashdog",
-    "Dabtype",
-    "Topicshots"
+    "Flashdog"
   ],
   "skill": [
     "C#"
@@ -130,9 +128,7 @@ Employee.find({}).remove()
   "first_name": "Walter",
   "last_name": "Diaz",
   "client": [
-    "Skynoodle",
-    "Shufflester",
-    "Yodo"
+      "Thoughtstorm"
   ],
   "skill": [
     "Java"
@@ -200,7 +196,6 @@ Employee.find({}).remove()
   "first_name": "Timothy",
   "last_name": "Ross",
   "client": [
-    "Brightdog",
     "Thoughtstorm"
   ],
   "skill": [
@@ -222,7 +217,7 @@ Employee.find({}).remove()
   "first_name": "Paul",
   "last_name": "Fuller",
   "client": [
-    "Voolith"
+    "Tavu"
   ],
   "skill": [
     "JavaScript"
@@ -243,9 +238,7 @@ Employee.find({}).remove()
   "first_name": "Joe",
   "last_name": "Walker",
   "client": [
-    "Tavu",
-    "Gigaclub",
-    "Yodo"
+    "Tavu"
   ],
   "skill": [
     "JavaScript"
@@ -393,9 +386,7 @@ Report.find({}).remove()
           "first_name": "Joe",
           "last_name": "Walker",
           "client": [
-            "Tavu",
-            "Gigaclub",
-            "Yodo"
+            "Tavu"
           ],
           "skill": [
             "Start-ups",
@@ -519,9 +510,7 @@ Report.find({}).remove()
           "first_name": "Patricia",
           "last_name": "Bradley",
           "client": [
-            "Flashdog",
-            "Dabtype",
-            "Topicshots"
+            "Flashdog"
           ],
           "skill": [
             "Clinical Development"
@@ -543,9 +532,7 @@ Report.find({}).remove()
       "first_name": "Carolyn",
       "last_name": "Cruz",
       "client": [
-        "Browsedrive",
-        "Youtags",
-        "Divape"
+        "Browsedrive"
       ],
       "skill": [
         "OBIEE"
@@ -565,8 +552,7 @@ Report.find({}).remove()
       "first_name": "Timothy",
       "last_name": "Ross",
       "client": [
-        "Brightdog",
-        "Thoughtstorm"
+        "Brightdog"
       ],
       "skill": [
         "Lawson HRIS"

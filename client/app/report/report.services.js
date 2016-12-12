@@ -54,6 +54,21 @@
                  }
              return dat;
              },
+           getClient: function(report, month){
+             var labels=[];
+             for(var i=0; i<report[month].length; i++){
+                  labels[i] = {client:report[month][i].client, salary:report[month][i].salary};
+                }
+            return labels;
+           },
+           getRecruiter: function(report, month){
+             var labels=[];
+             for(var i=0; i<report[month].length; i++){
+                  labels[i] = {client:report[month][i].client, salary:report[month][i].salary};
+                }
+            return labels;
+           },
+
            create: function(report){
              new resource(report).$save().then(function (newReport){
                reports.push(newReport);
